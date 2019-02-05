@@ -185,6 +185,30 @@
     }
 
     /* ----------------------------------------------------------------------
+      Table Styles
+    ----------------------------------------------------------------------- */
+
+    table#magic_listings {
+      margin-top: 30px;
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #685D8A;
+      opacity: .9;
+    }
+
+    table#magic_listings tr th {
+      background-color: #130A2E;
+      color: #FFF;
+      text-align: left;
+    }
+
+    table#magic_listings tr td, table#magic_listings tr th {
+      border: 1px solid white;
+      padding: 3px;
+
+    }
+
+    /* ----------------------------------------------------------------------
       Footer Styles
     ----------------------------------------------------------------------- */
     footer {

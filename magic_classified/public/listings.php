@@ -7,7 +7,22 @@
 
   <article class='column listings'>
       <h1>Newest Listings</h2>
-      <div></div>
+        <table id="magic_listings">
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+
+          <tr>
+            <td>Name</td>
+            <td>Category</td>
+            <td>Description</td>
+            <td>Price</td>
+          </tr>
+
+        </table>
   </article>
 
   <aside class='column'>Column</aside>
