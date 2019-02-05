@@ -18,7 +18,7 @@
     Header Styles
   ----------------------------------------------------------------------- */
   header {
-    width: 100%;
+    width: 98%;
     padding: 1%;
     margin: 0;
     background-color: #130A2E;
@@ -28,6 +28,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
   }
   .flex {
     font-size: 1em;
@@ -71,6 +72,50 @@
     text-decoration: underline;
   }
 
+  /* ----------------------------------------------------------------------
+    Main Page
+  ----------------------------------------------------------------------- */
+    main {
+      width: 90%;
+      background-image: url('../images/DSC_0028RW.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding: 5%;
+      min-height: 450px;
+    }
+
+    ul#menu {
+      list-style: none;
+      overflow: hidden;
+      width: 485px;
+      padding: 0;
+      margin: 100px auto;
+    }
+
+    ul#menu li {
+      float: left;
+      margin: 25px;
+
+    }
+
+    ul#menu li a {
+      display: block;
+      width: 150px;
+      padding: 25px 20px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      border: 1px solid white;
+      background-color: #685D8A;
+      opacity: 0.75;
+    }
+
+    ul#menu li a:hover {
+      background: #130A2E;
+      opacity: 1;
+      color: white;
+    }
 
     /* ----------------------------------------------------------------------
       Color Scheme:
