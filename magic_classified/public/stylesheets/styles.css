@@ -30,19 +30,38 @@
     justify-content: center;
   }
   .flex {
-    font-size: 22px;
+    font-size: 1em;
   }
   .logo {
     font-size: 26px;
     flex-grow: 6;
     padding-left: 2%;
   }
+  .right {
+      flex-grow: 1;
+      margin-top: 0.5%;
+  }
   .search {
-    flex-grow: 1;
+
   }
   .name {
-    flex-grow: 1;
+
   }
   .authenticate {
-    flex-grow: 1;
+
+  }
+  .head_nav {
+
+  }
+  .head_nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .head_nav li {
+    display: inline;
+    padding: 5%;
+  }
+  .head_nav a{
+    color: white;
   }
