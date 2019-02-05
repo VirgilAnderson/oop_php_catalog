@@ -217,6 +217,66 @@
     }
 
     /* ----------------------------------------------------------------------
+      Listing Detail Styles
+    ----------------------------------------------------------------------- */
+
+    .listing_details {
+      width: 100%;
+      margin: 0;
+      background-color: #4B3F6F;
+      color: white;
+      opacity: .9;
+      border: 1px solid white;
+    }
+
+    .listing_title {
+      width: 95%;
+      padding: 2.5%;
+      background-color: #130A2E;
+      border-bottom: 1px solid white;
+    }
+
+    .listing_body {
+      width: 95%;
+      padding: 2.5%;
+      display: flex;
+    }
+
+    .listing_info {
+      flex: 1;
+      border: 1px solid white;
+      padding: 1%;
+      margin-right: 1%;
+    }
+
+    .listing_gallery {
+      flex: 2;
+      border: 1px solid white;
+    }
+
+    .listing_footer {
+      width: 95%;
+      padding: .5% 2.5%;
+      background-color: #130A2E;
+      border-top: 1px solid white;
+    }
+
+    .featured {
+      background-color: green;
+      flex: 8;
+      height: 300px;
+      text-align: center;
+    }
+
+    .thumb {
+      background-color: darkgreen;
+      flex: 1;
+      height: 75px;
+      text-align: center;
+    }
+
+
+    /* ----------------------------------------------------------------------
       Footer Styles
     ----------------------------------------------------------------------- */
     footer {
