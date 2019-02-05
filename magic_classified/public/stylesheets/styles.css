@@ -84,6 +84,7 @@
       background-image: url('../images/DSC_0028RW.jpg');
       background-repeat: no-repeat;
       background-position: center;
+      background-attachment: fixed;
       background-size: cover;
       padding: 5%;
       min-height: 450px;
