@@ -1,0 +1,48 @@
+/* ----------------------------------------------------------------------
+  Magic Catalog Project
+  Virgil Anderson
+  Started 2/4/2019
+  ----------------------------------------------------------------------- */
+
+  /* ----------------------------------------------------------------------
+    Page Styles
+  ----------------------------------------------------------------------- */
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+
+  /* ----------------------------------------------------------------------
+    Header Styles
+  ----------------------------------------------------------------------- */
+  header {
+    width: 100%;
+    padding: 1%;
+    margin: 0;
+    background-color: black;
+    color: white;
+  }
+  .flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .flex {
+    font-size: 22px;
+  }
+  .logo {
+    font-size: 26px;
+    flex-grow: 6;
+    padding-left: 2%;
+  }
+  .search {
+    flex-grow: 1;
+  }
+  .name {
+    flex-grow: 1;
+  }
+  .authenticate {
+    flex-grow: 1;
+  }
