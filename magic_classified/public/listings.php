@@ -17,91 +17,66 @@
           <th>Category</th>
           <th>Description</th>
           <th>Price</th>
-          <th>View</th>
         </tr>
         <tr>
           <td>Name</td>
           <td>Category</td>
           <td>Description</td>
           <td>Price</td>
-          <td>Details</td>
         </tr>
         <tr>
           <td>Name</td>
           <td>Category</td>
           <td>Description</td>
           <td>Price</td>
-          <td>Details</td>
         </tr>
         <tr>
           <td>Name</td>
           <td>Category</td>
           <td>Description</td>
           <td>Price</td>
-          <td>Details</td>
         </tr>
         <tr>
           <td>Name</td>
           <td>Category</td>
           <td>Description</td>
           <td>Price</td>
-          <td>Details</td>
         </tr>
         <tr>
           <td>Name</td>
           <td>Category</td>
           <td>Description</td>
           <td>Price</td>
-          <td>Details</td>
         </tr>
         <tr>
           <td>Name</td>
           <td>Category</td>
           <td>Description</td>
           <td>Price</td>
-          <td>Details</td>
         </tr>
         <tr>
           <td>Name</td>
           <td>Category</td>
           <td>Description</td>
           <td>Price</td>
-          <td>Details</td>
         </tr>
         <tr>
           <td>Name</td>
           <td>Category</td>
           <td>Description</td>
           <td>Price</td>
-          <td>Details</td>
         </tr>
         <tr>
           <td>Name</td>
           <td>Category</td>
           <td>Description</td>
           <td>Price</td>
-          <td>Details</td>
         </tr>
         <tr>
           <td>Name</td>
           <td>Category</td>
           <td>Description</td>
           <td>Price</td>
-          <td>Details</td>
-        </tr>
-        <tr>
-          <td>Name</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td>Details</td>
-        </tr>
-        <tr>
-          <td>Name</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td>Details</td>
         </tr>
       </table>
   </article>
