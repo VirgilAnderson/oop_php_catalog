@@ -80,13 +80,14 @@
     Main Page
   ----------------------------------------------------------------------- */
     main {
-      width: 90%;
+      width: 100%;
       background-image: url('../images/DSC_0028RW.jpg');
       background-repeat: no-repeat;
       background-position: center;
       background-attachment: fixed;
       background-size: cover;
-      padding: 5%;
+      padding: 5% 0;
+      margin: 0;
       min-height: 450px;
     }
 
@@ -119,6 +120,67 @@
     ul#menu li a:hover {
       background: #130A2E;
       opacity: 1;
+      color: white;
+    }
+
+    .row {
+      display: flex;
+    }
+    .column {
+      flex: 1;
+      margin: 0;
+
+    }
+
+    .listings {
+      flex: 3;
+      border: none;
+      margin: 0 2%;
+    }
+
+    aside {
+
+    }
+
+    /* ----------------------------------------------------------------------
+      Sidebar Styles
+    ----------------------------------------------------------------------- */
+
+    .categories {
+        width: 100%;
+        margin: 0;
+        padding: 5% 0;
+        min-height: inherit;
+        text-align: center;
+        opacity: .85;
+        background-color: #685D8A;
+        color: white;
+        border: 1px solid white;
+    }
+
+    .categories ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      text-align: left;
+      background-color: #4B3F6F;
+
+    }
+
+    .categories li a {
+      display: block;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-top: 1px solid white;
+    }
+    .categories li:last-of-type{
+      border-bottom: 1px solid white;
+    }
+
+    .categories li a:hover {
+      background-color: #352958;
       color: white;
     }
 
