@@ -5,8 +5,8 @@
 <main>
   <section id='main_menu'>
     <ul id='menu'>
-      <li><a href=''>About Us</a></li>
-      <li><a href=''>View Listings</a></li>
+      <li><a href='<?php echo url_for('/about.php'); ?>'>About Us</a></li>
+      <li><a href='<?php echo url_for('/listings.php'); ?>'>View Listings</a></li>
     </ul>
   </section>
 </main>
