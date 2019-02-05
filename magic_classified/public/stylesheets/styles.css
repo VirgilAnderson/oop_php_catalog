@@ -188,24 +188,32 @@
       Table Styles
     ----------------------------------------------------------------------- */
 
-    table#magic_listings {
-      margin-top: 30px;
+    #magic_listings {
       width: 100%;
       border-collapse: collapse;
-      background-color: #685D8A;
       opacity: .9;
+      color: white;
     }
-
-    table#magic_listings tr th {
-      background-color: #130A2E;
-      color: #FFF;
+    #magic_listings td, #magic_listings th {
+      border: 1px solid white;
+      padding: 5px;
       text-align: left;
     }
 
-    table#magic_listings tr td, table#magic_listings tr th {
-      border: 1px solid white;
-      padding: 3px;
+    #magic_listings tr:nth-child(even) {
+      background-color: #685D8A;
+    }
 
+    #magic_listings tr:nth-child(odd) {
+      background-color: #4B3F6F;
+    }
+
+    #magic_listings tr:hover {
+      background-color: #241946;
+    }
+
+    #magic_listings th {
+      background-color: #130A2E;
     }
 
     /* ----------------------------------------------------------------------
