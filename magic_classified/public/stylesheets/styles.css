@@ -35,7 +35,7 @@
   }
   .logo {
     font-size: 26px;
-    flex-grow: 6;
+    flex-grow: 4;
     padding-left: 2%;
   }
   .logo a{
@@ -64,7 +64,7 @@
     text-decoration: underline;
   }
   .head_nav {
-
+    flex-grow: 3;
   }
   .head_nav ul {
     list-style-type: none;
