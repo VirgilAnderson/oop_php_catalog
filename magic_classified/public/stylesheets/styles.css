@@ -55,6 +55,14 @@
   .authenticate {
 
   }
+  .authenticate a{
+    color: white;
+    text-decoration: none;
+  }
+  .authenticate a:hover {
+    color: #685D8A;
+    text-decoration: underline;
+  }
   .head_nav {
 
   }
