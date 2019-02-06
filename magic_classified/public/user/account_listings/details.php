@@ -43,7 +43,9 @@
       </div><!-- listing_details -->
   </article>
 
-  <aside class='column'>Column</aside>
+  <aside class='column'>
+      <?php include(SHARED_PATH . '/advertisements.php'); ?>
+  </aside>
 
 </main>
 

@@ -193,6 +193,37 @@
     }
 
     /* ----------------------------------------------------------------------
+      Advertisement Styles
+    ----------------------------------------------------------------------- */
+
+    .advertisements {
+      width: 100%;
+      margin: 0;
+      padding: 5% 0;
+      min-height: inherit;
+      text-align: center;
+      opacity: .85;
+      background-color: #130A2E;
+      color: white;
+      border: 1px solid white;
+    }
+
+    .sponsor_box {
+
+    }
+
+    .sponsor_ad {
+      background-color: #241946;
+      height: 300px;
+      width: 100%;
+      border-top: 1px solid white;
+    }
+
+    .sponsor_ad:last-of-type {
+      border-bottom: 1px solid white;
+    }
+
+    /* ----------------------------------------------------------------------
       Table Styles
     ----------------------------------------------------------------------- */
 
