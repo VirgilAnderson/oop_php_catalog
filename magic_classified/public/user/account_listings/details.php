@@ -9,7 +9,7 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h2>Listing Name</h2>
+          <h2><i class="fas fa-dove"></i> Listing Name</h2>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
@@ -38,6 +38,7 @@
           <ul class='footer_menu'>
             <li><a href='<?php echo url_for('/user/account_listings/edit.php'); ?>'>Edit Listing</a></li>
             <li><a href='<?php echo url_for('/user/account_listings/delete.php'); ?>'>Delete Listing</a></li>
+            <li><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i></i> My Listings</a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->

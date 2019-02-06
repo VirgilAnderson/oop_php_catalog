@@ -7,8 +7,7 @@
   <aside class='column'><?php include(SHARED_PATH . '/sidebar.php'); ?></aside>
 
   <article class='column listings'>
-      <h1>Newest Listings</h1>
-      <img src='images/DSC_0065RT.jpg' alt='magic listings' width='100px' style='float: left; margin: 0 5px 5px 0; border-radius: 50%;'>
+      <h1><i class="fas fa-frog"></i> Newest Listings</h1>
       <p>Check out all the newest magic listings here</p>
       <p>Contact the listing owner and you can buy your magical treasure or create an account to list your own used gear!</p>
       <p>Page 3 of 10</p>

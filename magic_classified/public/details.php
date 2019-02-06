@@ -9,7 +9,7 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h2>Listing Name</h2>
+          <h2><i class="fas fa-frog"></i> Listing Name</h2>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
@@ -36,8 +36,8 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href='<?php echo url_for('/contact_owner.php'); ?>'>Contact Owner</a></li>
-            <li><a href='<?php echo url_for('/listings.php'); ?>'>Return to Listings</a></li>
+            <li><a href='<?php echo url_for('/contact_owner.php'); ?>'><i class="far fa-envelope"></i> Contact Owner</a></li>
+            <li><a href='<?php echo url_for('/listings.php'); ?>'><i class="fas fa-frog"></i> Listings</a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->

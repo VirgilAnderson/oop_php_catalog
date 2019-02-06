@@ -8,7 +8,7 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h2>Edit My Account</h2>
+          <h2>Edit <i class="far fa-user-circle"></i> My Account</h2>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
@@ -22,7 +22,7 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href='<?php echo url_for('/user/registration/index.php'); ?>'>My Account</a></li>
+            <li><a href='<?php echo url_for('/user/registration/index.php'); ?>'><i class="far fa-user-circle"></i> My Account</a></li>
             <li><a href='<?php echo url_for('/user/registration/delete.php'); ?>'>Delete Account</a></li>
           </ul>
         </div><!-- listing_footer -->
