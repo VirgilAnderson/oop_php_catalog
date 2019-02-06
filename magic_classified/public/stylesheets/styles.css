@@ -36,13 +36,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
   }
   .flex {
     font-size: 1em;
   }
   .logo {
-    font-size: 26px;
+    font-size: 2em;
     flex-grow: 3;
     padding-left: 2%;
   }
@@ -91,6 +90,9 @@
     color: #685D8A;
     text-decoration: underline;
   }
+  .menu_dropdown {
+    display: none;
+  }
 
   /* ----------------------------------------------------------------------
     Main Page
@@ -102,38 +104,33 @@
       background-position: center;
       background-attachment: fixed;
       background-size: cover;
-      padding: 5% 0;
+      padding: 7% 0;
       margin: 0;
       min-height: 450px;
     }
 
-    ul#menu {
-      list-style: none;
-      overflow: hidden;
-      width: 485px;
-      padding: 0;
-      margin: 100px auto;
+    .main_section {
+      display: flex;
+      justify-content: center;
     }
 
-    ul#menu li {
-      float: left;
-      margin: 25px;
-
-    }
-
-    ul#menu li a {
-      display: block;
-      width: 150px;
-      padding: 25px 20px;
+    .direct {
       text-align: center;
-      text-decoration: none;
+      font-size: 1.5em;
+      width: 25%;
+      margin: 5% 2.5%;
+    }
+
+    .direct a{
       color: white;
+      padding: 10% 20%;
       border: 1px solid white;
       background-color: #685D8A;
-      opacity: 0.75;
+      opacity: .8;
+      text-decoration: none;
     }
 
-    ul#menu li a:hover {
+    .direct a:hover {
       background: #130A2E;
       opacity: 1;
       color: white;
@@ -145,7 +142,6 @@
     .column {
       flex: 1;
       margin: 0;
-
     }
 
     .listings {
@@ -375,6 +371,62 @@
       background-color: #130A2E;
       color: white;
     }
+
+    /* ----------------------------------------------------------------------
+      Mobile Styles: Viewport 600px wide
+    ----------------------------------------------------------------------- */
+
+    @media only screen and (max-width: 768px) {
+
+      /* ----------------------------------------------------------------------
+        Mobile Header
+      ----------------------------------------------------------------------- */
+      .head_nav {
+        display: none;
+      }
+      .logo {
+        font-size: 1.5em;
+        margin-top: 1%;
+      }
+      .search {
+        display: none;
+      }
+      .authenticate {
+        display: none;
+      }
+
+      .menu_dropdown {
+        display: block;
+        padding: 1%;
+        font-size: 1.5em;
+      }
+
+      /* ----------------------------------------------------------------------
+        Mobile Main
+      ----------------------------------------------------------------------- */
+      .main_section {
+        display: flex;
+        flex-direction:  column;
+        padding: 5%;
+      }
+
+      .direct {
+        width: 100%;
+        margin: 5% 0;
+        line-height: 4em;
+      }
+
+      .direct a{
+
+      }
+
+      .direct a:hover {
+
+      }
+
+    }
+
+
 
     /* ----------------------------------------------------------------------
       Color Scheme:
