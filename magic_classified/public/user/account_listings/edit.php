@@ -22,8 +22,8 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href='<?php echo url_for('/user/registration/index.php'); ?>'>My Account</a></li>
-            <li><a href='<?php echo url_for('/user/registration/delete.php'); ?>'>Delete Account</a></li>
+            <li><a href='<?php echo url_for('/user/account_listings/details.php'); ?>'>My Listing</a></li>
+            <li><a href='<?php echo url_for('/user/account_listings/delete.php'); ?>'>Delete Listing</a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->
