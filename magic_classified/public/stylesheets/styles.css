@@ -69,49 +69,7 @@
     display: none;
   }
 
-  /* The dropdown container */
-  .dropdown {
-    float: right;
-  }
 
-  /* Dropdown button */
-  .dropdown .dropbtn {
-    border: none;
-    outline: none;
-    width: auto;
-    background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    }
-  header a:hover, .dropdown:hover .dropbtn {
-
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-
-    z-index: 1;
-  }
-
-  .dropdown-content a {
-    float: left;
-    clear: left;
-    color: black;
-    text-decoration: none;
-    display: block;
-    background-color: #f9f9f9;
-    width: 100%;
-    padding: 5%;
-    text-align: left;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
 
   /* ----------------------------------------------------------------------
     Mobile Header - 600px
@@ -170,7 +128,7 @@
       background-size: cover;
       padding: 7% 0;
       margin: 0;
-      min-height: 450px;
+      min-height: 815px;
     }
 
     .main_section {
@@ -181,8 +139,8 @@
     .direct {
       text-align: center;
       font-size: 1.5em;
-      width: 25%;
-      margin: 5% 2.5%;
+      width: 35%;
+      margin: 10% 2.5%;
     }
 
     .direct a{
