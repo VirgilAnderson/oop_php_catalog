@@ -21,7 +21,10 @@
 
         </div><!--listing_body -->
         <div class='listing_footer'>
-          <p>Account Footer</p>
+          <ul class='footer_menu'>
+            <li><a href='<?php echo url_for('/user/registration/edit.php'); ?>'>Edit Account</a></li>
+            <li><a href='<?php echo url_for('/user/registration/delete.php'); ?>'>Delete Account</a></li>
+          </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->
   </article>

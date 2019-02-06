@@ -280,6 +280,26 @@
       border-top: 1px solid white;
     }
 
+    .footer_menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer_menu li {
+      display:inline;
+      margin-right: 1%;
+    }
+
+    .footer_menu a{
+      color: white;
+      text-decoration: none;
+    }
+    .footer_menu a:hover{
+      color: #685D8A;
+      text-decoration: underline;
+    }
+
     .featured {
       background-color: green;
       flex: 8;
