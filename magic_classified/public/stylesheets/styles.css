@@ -46,7 +46,7 @@
 
   header a:first-child {
     font-size: 2em;
-    margin: 0 2%;
+    margin: 0 15% 0 2%;
   }
   header a:hover {
     color: #685D8A;
@@ -112,9 +112,6 @@
       margin: 5% 0 0 2.5%;
     }
   }
-
-
-
 
   /* ----------------------------------------------------------------------
     Main Page
