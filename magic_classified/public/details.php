@@ -35,7 +35,9 @@
           </div><!-- .listing_gallery -->
         </div><!--listing_body -->
         <div class='listing_footer'>
-          <p>Listing Footer</p>
+          <ul class='footer_menu'>
+            <li><a href='<?php echo url_for('/listings.php'); ?>'>Listings</a></li>
+          </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->
   </article>
