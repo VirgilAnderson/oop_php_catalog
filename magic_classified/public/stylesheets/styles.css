@@ -197,7 +197,7 @@
     ----------------------------------------------------------------------- */
 
     .advertisements {
-      width: 100%;
+      width: 99%;
       margin: 0;
       padding: 5% 0;
       min-height: inherit;
@@ -342,6 +342,9 @@
       flex: 1;
       height: 75px;
       text-align: center;
+    }
+    .thumb:nth-child(odd){
+      background-color: darkblue;
     }
 
 

@@ -36,6 +36,7 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
+            <li><a href='<?php echo url_for('/contact_owner.php'); ?>'>Contact Owner</a></li>
             <li><a href='<?php echo url_for('/listings.php'); ?>'>Return to Listings</a></li>
           </ul>
         </div><!-- listing_footer -->
