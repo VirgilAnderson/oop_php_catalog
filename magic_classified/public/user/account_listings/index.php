@@ -90,6 +90,104 @@
           <td>Price</td>
           <td><a href='details.php'>View</a></td>
         </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
+        <tr>
+          <td>This one</td>
+          <td>Category</td>
+          <td>Description</td>
+          <td>Price</td>
+          <td><a href='details.php'>View</a></td>
+        </tr>
       </table>
       <div class='pagination'>
         <p><< 1 2 <strong>3</strong> 4 5 6 7 8 9 10 >></p>
