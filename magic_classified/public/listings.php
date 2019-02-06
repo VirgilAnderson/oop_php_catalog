@@ -1,5 +1,6 @@
 <?php require_once('../private/initialize.php'); ?>
 
+<?php $page_title = 'Magic Listings'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>

@@ -1,5 +1,5 @@
 <?php require_once('../../../private/initialize.php'); ?>
-
+<?php $page_title = 'My Account'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
