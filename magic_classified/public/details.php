@@ -10,7 +10,7 @@
   $listing = Listing::find_by_id($id);
 ?>
 
-<?php $page_title = 'Details'; ?>
+<?php $page_title = 'Details ' . $listing->name; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
