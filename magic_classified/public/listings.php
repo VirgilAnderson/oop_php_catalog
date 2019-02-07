@@ -18,9 +18,9 @@
         <tr>
           <th>Name</th>
           <th>Category</th>
-          <th>Condition</th>
           <th>Price</th>
           <th>Location</th>
+          <th>&nbsp;</th>
         </tr>
         <?php $listings = Listing::find_all(); ?>
         <?php foreach($listings as $listing) { ?>
@@ -28,9 +28,9 @@
         <tr>
           <td><?php echo h($listing->name); ?></td>
           <td><?php echo h($listing->category); ?></td>
-          <td><?php echo h($listing->condition()); ?></td>
           <td><?php echo h($listing->price); ?></td>
           <td><?php echo h($listing->location); ?></td>
+          <td><a href="details.php?id=<?php echo $listing->id; ?>">View</a></td>
         </tr>
         <?php } ?>
       </table>
