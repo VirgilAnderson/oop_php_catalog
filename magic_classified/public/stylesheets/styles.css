@@ -21,6 +21,9 @@
     color: #352958;
     text-decoration: underline;
   }
+  dt {
+    font-weight: bold;
+  }
 
   /* ----------------------------------------------------------------------
     Header Styles
@@ -478,11 +481,11 @@
       margin-right: 1%;
     }
 
-    .footer_menu a{
+    .listings a{
       color: white;
       text-decoration: none;
     }
-    .footer_menu a:hover{
+    .listings a:hover{
       color: #685D8A;
       text-decoration: underline;
     }
