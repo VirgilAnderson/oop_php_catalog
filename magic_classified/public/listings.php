@@ -1,6 +1,7 @@
 <?php require_once('../private/initialize.php'); ?>
 
 <?php $page_title = 'Magic Listings'; ?>
+<?php include(SHARED_PATH . '/side_nav.php'); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
@@ -10,6 +11,7 @@
       <h1><i class="fas fa-frog"></i> Newest Listings</h1>
       <p>Check out all the newest magic listings here</p>
       <p>Contact the listing owner and you can buy your magical treasure or create an account to list your own used gear!</p>
+      <p><span class='sidenav_button' style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Categories</span></p>
       <p>Page 3 of 10</p>
 
       <table id="magic_listings">
