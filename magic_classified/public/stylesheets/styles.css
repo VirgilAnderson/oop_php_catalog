@@ -111,7 +111,10 @@
       font-size: 2em;
     }
 
-    header.responsive {position: relative;}
+    header.responsive {
+      position: relative;
+      transition: 0.5s;
+    }
     header.responsive .icon {
       position: absolute;
       right: 2%;
@@ -149,7 +152,7 @@
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    padding: 60px 0;
   }
 
   .sidenav a {
