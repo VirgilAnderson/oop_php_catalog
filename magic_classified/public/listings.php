@@ -28,7 +28,7 @@
         <tr>
           <td><?php echo h($listing->name); ?></td>
           <td><?php echo h($listing->category); ?></td>
-          <td><?php echo h($listing->condition_id); ?></td>
+          <td><?php echo h($listing->condition()); ?></td>
           <td><?php echo h($listing->price); ?></td>
           <td><?php echo h($listing->location); ?></td>
         </tr>
