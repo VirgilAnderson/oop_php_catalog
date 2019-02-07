@@ -22,28 +22,19 @@
           <th>Price</th>
           <th>Location</th>
         </tr>
-
-        <?php foreach($listing_array as $args) { ?>
-        <?php $listing = new Listing($args); ?>
+        <?php $listings = Listing::find_all(); ?>
+        <?php foreach($listings as $listing) { ?>
 
         <tr>
-          <td><?php echo h($bike->name); ?></td>
-          <td><?php echo h($bike->category); ?></td>
-          <td><?php echo h($bike->condition); ?></td>
-          <td><?php echo h($bike->price); ?></td>
-          <td><?php echo h($bike->location); ?></td>
+          <td><?php echo h($listing->name); ?></td>
+          <td><?php echo h($listing->category); ?></td>
+          <td><?php echo h($listing->condition_id); ?></td>
+          <td><?php echo h($listing->price); ?></td>
+          <td><?php echo h($listing->location); ?></td>
         </tr>
         <?php } ?>
       </table>
 
-<?php
-  $sql = "SELECT * FROM listings";
-  $result = $database->query($sql);
-  $row = $result->fetch_assoc();
-  $result->free();
-  echo 'NAME: ' . $row['name'];
-  
-?>
       <div class='pagination'>
         <p><< 1 2 <strong>3</strong> 4 5 6 7 8 9 10 >></p>
       </div>
