@@ -313,7 +313,7 @@
         min-height: inherit;
         text-align: center;
         opacity: .85;
-        background-color: #130A2E;
+        background-color: #352958;
         color: white;
         border: 1px solid white;
 
@@ -325,7 +325,7 @@
       padding: 0;
       width: 100%;
       text-align: left;
-      background-color: #4B3F6F;
+      background-color: #685D8A;
 
     }
 
@@ -356,7 +356,7 @@
       min-height: inherit;
       text-align: center;
       opacity: .85;
-      background-color: #130A2E;
+      background-color: #352958;
       color: white;
       border: 1px solid white;
     }
@@ -366,7 +366,7 @@
     }
 
     .sponsor_ad {
-      background-color: #241946;
+      background-color: #685D8A;
       height: 300px;
       width: 100%;
       border-top: 1px solid white;
