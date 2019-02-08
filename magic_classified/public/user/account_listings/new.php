@@ -4,17 +4,9 @@
   if(is_post_request()) {
 
     // Create record using post parameters
-    $args = [];
-    $args['name'] = $_POST['name'] ?? NULL;
-    $args['description'] = $_POST['description'] ?? NULL;
-    $args['category'] = $_POST['category'] ?? NULL;
-    $args['price'] = $_POST['price'] ?? NULL;
-    $args['manufacturer'] = $_POST['manufacturer'] ?? NULL;
-    $args['condition_id'] = $_POST['condition_id'] ?? NULL;
-    $args['location'] = $_POST['location'] ?? NULL;
-
+    $args =  $_POST['listing'];
     $listing = new Listing($args);
-    $result = $listing->create();
+    $result = $listing->save();
 
     if($result === true) {
       $new_id = $listing->id;

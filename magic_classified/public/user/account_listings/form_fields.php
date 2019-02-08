@@ -7,19 +7,19 @@ if(!isset($listing)) {
 ?>
 
 <dl>
-  <dt><label for='name'>Name:</label></dt>
-  <dd><input type="text" name="name" value="<?php echo h($listing->name); ?>" /></dd>
+  <dt><label for='listing[name]'>Name:</label></dt>
+  <dd><input type="text" name="listing[name]" value="<?php echo h($listing->name); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt><label for='description'>Description:</label></dt>
-  <dd><textarea name="description" rows="5" cols="50"><?php echo h($listing->description); ?></textarea></dd>
+  <dt><label for='listing[description]'>Description:</label></dt>
+  <dd><textarea name="listing[description]" rows="5" cols="50"><?php echo h($listing->description); ?></textarea></dd>
 </dl>
 
 <dl>
-  <dt><label for='category'>Category:</label></dt>
+  <dt><label for='listing[category]'>Category:</label></dt>
   <dd>
-    <select name="category">
+    <select name="listing[category]">
     <?php foreach(Listing::CATEGORIES as $category) { ?>
       <option value="<?php echo $category; ?>" <?php if($listing->category == $category) { echo 'selected'; } ?>><?php echo $category; ?></option>
     <?php } ?>
@@ -28,19 +28,19 @@ if(!isset($listing)) {
 </dl>
 
 <dl>
-  <dt><label for='price'>Price:</label></dt>
-  <dd>$ <input type="text" name="price" size="18" value="<?php echo h($listing->price); ?>" /></dd>
+  <dt><label for='listing[price]'>Price:</label></dt>
+  <dd>$ <input type="text" name="listing[price]" size="18" value="<?php echo h($listing->price); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt><label for='manufacturer'>Manufacturer:</label></dt>
-  <dd><input type="text" name="manufacturer" value="<?php echo h($listing->manufacturer); ?>" /></dd>
+  <dt><label for='listing[manufacturer]'>Manufacturer:</label></dt>
+  <dd><input type="text" name="listing[manufacturer]" value="<?php echo h($listing->manufacturer); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt><label for='condition_id'>Condition:</label></dt>
+  <dt><label for='listing[condition_id]'>Condition:</label></dt>
   <dd>
-    <select name="condition_id">
+    <select name="listing[condition_id]">
       <option value="<?php echo $listing->condition(); ?>"></option>
       <?php foreach(Listing::CONDITION_OPTIONS as $cond_id => $cond_name) { ?>
       <option value="<?php echo $cond_id; ?>"<?php if($listing->condition_id == $cond_id) {echo 'selected'; }?>><?php echo $cond_name; ?></option>
@@ -50,6 +50,6 @@ if(!isset($listing)) {
 </dl>
 
 <dl>
-  <dt><label for='location'>Location:</label></dt>
-  <dd><input type="text" name="location" value="<?php echo h($listing->location); ?>" /></dd>
+  <dt><label for='listing[location]'>Location:</label></dt>
+  <dd><input type="text" name="listing[location]" value="<?php echo h($listing->location); ?>" /></dd>
 </dl>
