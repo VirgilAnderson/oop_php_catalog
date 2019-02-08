@@ -19,7 +19,7 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h2><i class="fas fa-frog"></i> <?php echo h($listing->name); ?></h2>
+          <h1><i class="fas fa-frog"></i> <?php echo h($listing->name); ?></h1>
           <p><a href='<?php echo url_for('/listings.php'); ?>'><< Return to Listings</a></p>
         </div><!-- .listing_title -->
 

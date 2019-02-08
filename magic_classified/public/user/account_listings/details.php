@@ -63,8 +63,8 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href='edit.php?id=<?php echo $listing->id; ?>'>Edit Listing</a></li>
-            <li><a href='<?php echo url_for('/user/account_listings/delete.php'); ?>'>Delete Listing</a></li>
+            <li><a href='edit.php?id=<?php echo $listing->id; ?>'><i class="fas fa-edit"></i> Edit Listing</a></li>
+            <li><a href='<?php echo url_for('/user/account_listings/delete.php'); ?>'><i class="far fa-trash-alt"></i> Delete Listing</a></li>
             <li><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i></i> My Listings</a></li>
           </ul>
         </div><!-- listing_footer -->

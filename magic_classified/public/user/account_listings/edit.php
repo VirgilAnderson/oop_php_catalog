@@ -44,7 +44,10 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h2>Edit My Listing</h2>
+          <h1>Edit My Listing</h1>
+          <div class='errors'>
+            <?php  echo display_errors($listing->errors); ?>
+          </div>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
@@ -58,8 +61,9 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href='<?php echo url_for('/user/account_listings/details.php'); ?>'>My Listing</a></li>
-            <li><a href='<?php echo url_for('/user/account_listings/delete.php'); ?>'>Delete Listing</a></li>
+            <li><a href="details.php?id=<?php echo $id; ?>"><< Return to Listing</a></li>
+            <li><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i></i> My Listings</a></li>
+            <li><a href='<?php echo url_for('/user/account_listings/delete.php'); ?>'><i class="far fa-trash-alt"></i> Delete Listing</a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->

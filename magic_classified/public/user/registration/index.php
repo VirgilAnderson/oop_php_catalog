@@ -8,7 +8,9 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h2><i class="far fa-user-circle"></i> My Account</h2>
+          <h1><i class="far fa-user-circle"></i> My Account</h1>
+          <p><a href='new.php'><i class="fas fa-plus-circle"></i> New Listing</a></p>
+          <p><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i> My Listings</a></p>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
@@ -22,9 +24,8 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href='<?php echo url_for('/user/registration/edit.php'); ?>'>Edit Account</a></li>
-            <li><a href='<?php echo url_for('/user/registration/delete.php'); ?>'>Delete Account</a></li>
-            <li><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i> My Listings</a></li>
+            <li><a href='<?php echo url_for('/user/registration/edit.php'); ?>'><i class="fas fa-edit"></i> Edit Account</a></li>
+            <li><a href='<?php echo url_for('/user/registration/delete.php'); ?>'><i class="far fa-trash-alt"></i> Delete Account</a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->

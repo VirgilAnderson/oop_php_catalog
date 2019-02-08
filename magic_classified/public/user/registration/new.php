@@ -8,7 +8,7 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h2>Create New Account</h2>
+          <h1>Create New Account</h1>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>

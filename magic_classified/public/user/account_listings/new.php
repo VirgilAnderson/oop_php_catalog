@@ -31,7 +31,10 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h2><i class="fas fa-plus-circle"></i> New Listing</h2>
+          <h1><i class="fas fa-plus-circle"></i> New Listing</h1>
+          <div class='errors'>
+            <?php  echo display_errors($listing->errors); ?>
+          </div>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
