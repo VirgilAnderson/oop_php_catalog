@@ -19,8 +19,8 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h1><i class="fas fa-frog"></i> <?php echo h($listing->name); ?></h1>
-          <p><a href='<?php echo url_for('/listings.php'); ?>'><< Return to Listings</a></p>
+          <h1><?php echo h($listing->name); ?></h1>
+          <p><a href='<?php echo url_for('/listings.php'); ?>'><< Return to <i class="fas fa-frog"></i> Listings</a></p>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
@@ -65,7 +65,6 @@
         <div class='listing_footer'>
           <ul class='footer_menu'>
             <li><a href='<?php echo url_for('/contact_owner.php'); ?>'><i class="far fa-envelope"></i> Contact Owner</a></li>
-            <li><a href='<?php echo url_for('/listings.php'); ?>'><i class="fas fa-frog"></i> Listings</a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->

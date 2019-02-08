@@ -19,7 +19,7 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h1><i class="fas fa-dove"></i> <?php echo h($listing->name); ?></h1>
+          <h1><?php echo h($listing->name); ?></h1>
           <p><a href='index.php'><< Return to <i class="fas fa-dove"></i></i> My Listings</a></p>
         </div><!-- .listing_title -->
 

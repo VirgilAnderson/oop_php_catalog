@@ -44,7 +44,7 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h1>Edit <?php echo $listing->name; ?></h1>
+          <h1>Edit: <?php echo $listing->name; ?></h1>
           <p><a href="details.php?id=<?php echo $id; ?>"><< Return to <?php echo $listing->name; ?></a></p>
           <div class='errors'>
             <?php  echo display_errors($listing->errors); ?>
