@@ -26,7 +26,7 @@
 
   } else {
     // display the form
-    $listing = [];
+    $listing = new Listing;
   }
 
 ?>
