@@ -15,178 +15,21 @@
         <tr>
           <th>Name</th>
           <th>Category</th>
-          <th>Description</th>
           <th>Price</th>
-          <th>Details</th>
+          <th>Location</th>
+          <th>&nbsp;</th>
         </tr>
+        <?php $listings = Listing::find_all(); ?>
+        <?php foreach($listings as $listing) { ?>
+
         <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
+          <td><?php echo h($listing->name); ?></td>
+          <td><?php echo h($listing->category); ?></td>
+          <td><?php echo '$' . h($listing->price); ?></td>
+          <td><?php echo h($listing->location); ?></td>
+          <td><a href="details.php?id=<?php echo $listing->id; ?>">View</a></td>
         </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
-        <tr>
-          <td>This one</td>
-          <td>Category</td>
-          <td>Description</td>
-          <td>Price</td>
-          <td><a href='details.php'>View</a></td>
-        </tr>
+        <?php } ?>
       </table>
       <div class='pagination'>
         <p><< 1 2 <strong>3</strong> 4 5 6 7 8 9 10 >></p>
