@@ -19,7 +19,8 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h2><i class="fas fa-dove"></i> <?php echo h($listing->name); ?></h2>
+          <h1><i class="fas fa-dove"></i> <?php echo h($listing->name); ?></h1>
+          <p><a href='index.php'><< Return to <i class="fas fa-dove"></i></i> My Listings</a></p>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
@@ -63,9 +64,8 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href='edit.php?id=<?php echo $listing->id; ?>'><i class="fas fa-edit"></i> Edit Listing</a></li>
-            <li><a href='<?php echo url_for('/user/account_listings/delete.php'); ?>'><i class="far fa-trash-alt"></i> Delete Listing</a></li>
-            <li><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i></i> My Listings</a></li>
+            <li><a href='edit.php?id=<?php echo $listing->id; ?>'><i class="fas fa-edit"></i> Edit <?php echo $listing->name; ?></a></li>
+            <li><a href='<?php echo url_for('/user/account_listings/delete.php'); ?>'><i class="far fa-trash-alt"></i> Delete <?php echo $listing->name; ?></a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->

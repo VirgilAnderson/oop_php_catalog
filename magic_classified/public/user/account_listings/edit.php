@@ -35,7 +35,7 @@
 ?>
 
 
-<?php $page_title = 'Edit My Listing'; ?>
+<?php $page_title = 'Edit ' . $listing->name; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
@@ -44,7 +44,8 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h1>Edit My Listing</h1>
+          <h1>Edit <?php echo $listing->name; ?></h1>
+          <p><a href="details.php?id=<?php echo $id; ?>"><< Return to <?php echo $listing->name; ?></a></p>
           <div class='errors'>
             <?php  echo display_errors($listing->errors); ?>
           </div>
@@ -54,16 +55,15 @@
           <div class='listing_info'>
             <form action="<?php echo url_for('/user/account_listings/edit.php?id=' . h(u($id))); ?>" method="post">
               <?php include('form_fields.php'); ?>
-              <input type='submit' value='Edit Listing' />
+              <input type='submit' value='Edit <?php echo $listing->name; ?>' />
             </form>
           </div><!-- .listing_info -->
 
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href="details.php?id=<?php echo $id; ?>"><< Return to Listing</a></li>
             <li><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i></i> My Listings</a></li>
-            <li><a href='<?php echo url_for('/user/account_listings/delete.php'); ?>'><i class="far fa-trash-alt"></i> Delete Listing</a></li>
+            <li><a href='<?php echo url_for('/user/account_listings/delete.php'); ?>'><i class="far fa-trash-alt"></i> Delete <?php echo $listing->name; ?></a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->
