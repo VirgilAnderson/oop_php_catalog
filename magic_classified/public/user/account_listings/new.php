@@ -1,4 +1,35 @@
 <?php require_once('../../../private/initialize.php'); ?>
+
+<?php
+  if(is_post_request()) {
+
+    // Create record using post parameters
+    $args = [];
+    $args['name'] = $_POST['name'] ?? NULL;
+    $args['description'] = $_POST['description'] ?? NULL;
+    $args['category'] = $_POST['category'] ?? NULL;
+    $args['price'] = $_POST['price'] ?? NULL;
+    $args['manufacturer'] = $_POST['manufacturer'] ?? NULL;
+    $args['condition_id'] = $_POST['condition_id'] ?? NULL;
+    $args['location'] = $_POST['location'] ?? NULL;
+
+    $listing = new Listing($args);
+    $result = $listing->create();
+
+    if($result === true) {
+      $new_id = $listing->id;
+      $_SESSION['message'] = 'The listing was created successfully.';
+      redirect_to(url_for('/user/account_listings/details.php?id=' . $new_id));
+    } else {
+      // show errors
+    }
+
+  } else {
+    // display the form
+    $listing = [];
+  }
+
+?>
 <?php $page_title = 'Edit My Account'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
@@ -13,9 +44,9 @@
 
         <div class='listing_body'>
           <div class='listing_info'>
-            <form>
+            <form action="<?php echo url_for('/user/account_listings/new.php'); ?>" method="post">
               <?php include('form_fields.php'); ?>
-              <input type='submit' value='New account' />
+              <input type='submit' value='Create New Listing' />
             </form>
           </div><!-- .listing_info -->
 

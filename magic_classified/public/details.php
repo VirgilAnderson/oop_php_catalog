@@ -35,7 +35,7 @@
             </dl>
             <dl>
               <dt>Price:</dt>
-              <dd><?php echo h($listing->price); ?></dd>
+              <dd>$<?php echo h($listing->price); ?></dd>
             </dl>
             <dl>
               <dt>Manufacturer:</dt>

@@ -1,6 +1,16 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
-<?php $page_title = 'Details'; ?>
+<?php
+  // Find requested id
+  $id = $_GET['id'] ?? false;
+  if(!$id){
+    redirect_to('listings.php');
+  }
+  // Find listing by id
+  $listing = Listing::find_by_id($id);
+?>
+
+<?php $page_title = 'Details: ' . $listing->name; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
@@ -9,18 +19,35 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h2><i class="fas fa-dove"></i> Listing Name</h2>
+          <h2><i class="fas fa-dove"></i> <?php echo h($listing->name); ?></h2>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
           <div class='listing_info'>
-            <p>Name: blank</p>
-            <p>Description: blank</p>
-            <p>Category: blank</p>
-            <p>Price: blank</p>
-            <p>Manufacturer: blank</p>
-            <p>Condition: blank</p>
-            <p>Location: blank</p>
+            <dl>
+              <dt>Description:</dt>
+              <dd><?php echo h($listing->description); ?></dd>
+            </dl>
+            <dl>
+              <dt>Category:</dt>
+              <dd><?php echo h($listing->category); ?></dd>
+            </dl>
+            <dl>
+              <dt>Price:</dt>
+              <dd>$<?php echo h($listing->price); ?></dd>
+            </dl>
+            <dl>
+              <dt>Manufacturer:</dt>
+              <dd><?php echo h($listing->manufacturer); ?></dd>
+            </dl>
+            <dl>
+              <dt>Condition:</dt>
+              <dd><?php echo h($listing->condition()); ?></dd>
+            </dl>
+            <dl>
+              <dt>Location:</dt>
+              <dd><?php echo h($listing->location); ?></dd>
+            </dl>
           </div><!-- .listing_info -->
           <div class='listing_gallery'>
             <div class='row'>

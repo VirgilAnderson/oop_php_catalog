@@ -5,23 +5,24 @@
 
 <dl>
   <dt><label for='description'>Description:</label></dt>
-  <dd><input type="text" name="description" value="" /></dd>
+  <dd><textarea name="description" rows="5" cols="50"></textarea></dd>
 </dl>
 
 <dl>
   <dt><label for='category'>Category:</label></dt>
   <dd>
     <select name="category">
-      <option value='closeup'>Close Up Magic</option>
-      <option value='stage'>Stage Magic</option>
-      <option value='illusion'>Stage Illusion</option>
+      <option value=""></option>
+      <?php foreach(Listing::CATEGORIES as $category) { ?>
+      <option value="<?php echo $category; ?>"><?php echo $category; ?></option>
+    <?php } ?>
     </select>
   </dd>
 </dl>
 
 <dl>
   <dt><label for='price'>Price:</label></dt>
-  <dd><input type="text" name="price" value="" /></dd>
+  <dd>$ <input type="text" name="price" size="18" value="" /></dd>
 </dl>
 
 <dl>
@@ -30,14 +31,13 @@
 </dl>
 
 <dl>
-  <dt><label for='condition'>Condition:</label></dt>
+  <dt><label for='condition_id'>Condition:</label></dt>
   <dd>
-    <select name='condition'>
-      <option value='new'>New</option>
-      <option value='likenew'>Like New</option>
-      <option value='good'>Good</option>
-      <option value='fair'>Fair</option>
-      <option value='poor'>Poor</option>
+    <select name="condition_id">
+      <option value=""></option>
+      <?php foreach(Listing::CONDITION_OPTIONS as $cond_id => $cond_name) { ?>
+      <option value="<?php echo $cond_id; ?>"><?php echo $cond_name; ?></option>
+      <?php } ?>
     </select>
   </dd>
 </dl>

@@ -28,7 +28,7 @@
         <tr>
           <td><?php echo h($listing->name); ?></td>
           <td><?php echo h($listing->category); ?></td>
-          <td><?php echo h($listing->price); ?></td>
+          <td><?php echo '$' . h($listing->price); ?></td>
           <td><?php echo h($listing->location); ?></td>
           <td><a href="details.php?id=<?php echo $listing->id; ?>">View</a></td>
         </tr>
