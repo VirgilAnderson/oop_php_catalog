@@ -1,5 +1,13 @@
 <?php require_once('../../../private/initialize.php'); ?>
-<?php $page_title = 'Edit My Account'; ?>
+
+<?php
+  $id = $_GET['uid'];
+  $user = User::find_by_id($id);
+  if($user == false) {
+    redirect_to(url_for('../login.php'));
+  }
+?>
+<?php $page_title = 'Delete My Account'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
@@ -14,7 +22,7 @@
         <div class='listing_body'>
           <div class='listing_info'>
             <form>
-              <h2>Are you sure you want to delete?</h2>
+              <h2>Are you sure you want to delete <?php echo $user->username;?>?</h2>
               <input type='submit' value='Delete account' />
             </form>
           </div><!-- .listing_info -->
@@ -22,8 +30,8 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href='<?php echo url_for('/user/registration/index.php'); ?>'><i class="far fa-user-circle"></i> My Account</a></li>
-            <li><a href='<?php echo url_for('/user/registration/edit.php'); ?>'><i class="fas fa-edit"></i> Edit Account</a></li>
+            <li><a href='<?php echo url_for('/user/registration/index.php?uid=') . $user->id; ?>'><i class="far fa-user-circle"></i> My Account</a></li>
+            <li><a href='<?php echo url_for('/user/registration/edit.php?uid=') . $user->id; ?>'><i class="fas fa-edit"></i> Edit Account</a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->

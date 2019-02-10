@@ -1,5 +1,14 @@
 <?php require_once('../../../private/initialize.php'); ?>
-<?php $page_title = 'My Account'; ?>
+
+<?php
+
+  // Find all users
+  $id = $_GET['uid'] ?? 1; // PHP > 7.0
+  $user = User::find_by_id($id);
+
+?>
+
+<?php $page_title = 'Show User: ' . h($user->username); ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
@@ -8,24 +17,35 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h1><i class="far fa-user-circle"></i> My Account</h1>
+          <h1><i class="far fa-user-circle"></i> My Account: <?php echo h($user->username); ?></h1>
           <p><a href='../account_listings/new.php'><i class="fas fa-plus-circle"></i> New Listing</a></p>
           <p><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i> My Listings</a></p>
         </div><!-- .listing_title -->
-
         <div class='listing_body'>
           <div class='listing_info'>
-            <p>UserName:</p>
-            <p>Email:</p>
-            <p>Phone:</p>
-            <p>Password:</p>
+            <dl>
+              <dt>First Name:</dt>
+              <dd><?php echo h($user->first_name); ?></dd>
+            </dl>
+            <dl>
+              <dt>Last Name:</dt>
+              <dd><?php echo h($user->last_name); ?></dd>
+            </dl>
+            <dl>
+              <dt>Username:</dt>
+              <dd><?php echo h($user->username); ?></dd>
+            </dl>
+            <dl>
+              <dt>Email:</dt>
+              <dd><?php echo h($user->email); ?></dd>
+            </dl>
           </div><!-- .listing_info -->
 
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href='<?php echo url_for('/user/registration/edit.php'); ?>'><i class="fas fa-edit"></i> Edit Account</a></li>
-            <li><a href='<?php echo url_for('/user/registration/delete.php'); ?>'><i class="far fa-trash-alt"></i> Delete Account</a></li>
+            <li><a href='<?php echo url_for('/user/registration/edit.php?uid=') . $user->id; ?>'><i class="fas fa-edit"></i> Edit Account</a></li>
+            <li><a href='<?php echo url_for('/user/registration/delete.php?uid=') . $user->id; ?>'><i class="far fa-trash-alt"></i> Delete Account</a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->
