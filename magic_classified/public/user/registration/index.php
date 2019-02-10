@@ -9,7 +9,7 @@
       <div class="listing_details">
         <div class='listing_title'>
           <h1><i class="far fa-user-circle"></i> My Account</h1>
-          <p><a href='new.php'><i class="fas fa-plus-circle"></i> New Listing</a></p>
+          <p><a href='../account_listings/new.php'><i class="fas fa-plus-circle"></i> New Listing</a></p>
           <p><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i> My Listings</a></p>
         </div><!-- .listing_title -->
 

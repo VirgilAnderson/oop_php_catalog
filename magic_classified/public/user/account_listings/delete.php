@@ -25,7 +25,7 @@
 
   }
 ?>
-<?php $page_title = 'Delete My Listing'; ?>
+<?php $page_title = 'Delete ' . $listing->name; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
@@ -41,7 +41,7 @@
           <div class='listing_info'>
             <form action="<?php echo url_for('/user/account_listings/delete.php?id=' . h(u($id))); ?>" method='post'>
               <h2>Are you sure you want to delete?</h2>
-              <input type='submit' value='Delete Listing' />
+              <input type='submit' value='Delete <?php echo $listing->name; ?>' />
             </form>
           </div><!-- .listing_info -->
 
@@ -49,7 +49,7 @@
         <div class='listing_footer'>
           <ul class='footer_menu'>
             <li><a href="details.php?id=<?php echo $id; ?>"><< Return to <?php echo $listing->name; ?></a></li>
-            <li><a href='<?php echo url_for('/user/account_listings/edit.php'); ?>'><i class="fas fa-edit"></i> Edit Listing</a></li>
+              <li><a href='edit.php?id=<?php echo $listing->id; ?>'><i class="far fa-trash-alt"></i> Edit <?php echo $listing->name; ?></a></li>
             <li><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i></i> My Listings</a></li>
           </ul>
         </div><!-- listing_footer -->
