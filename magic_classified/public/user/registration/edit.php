@@ -6,6 +6,25 @@
   if($user == false) {
     redirect_to(url_for('../login.php'));
   }
+
+  if(is_post_request()) {
+
+    // Create record using post parameters
+    $args = $_POST['user'];
+    $user->merge_attributes($args);
+    $result = $user->save();
+
+    if($result === true) {
+      $new_id = $user->id;
+      $_SESSION['message'] = 'The user was updated successfully.';
+      redirect_to(url_for('/user/registration/index.php?uid=' . $new_id));
+    } else {
+      // show errors
+    }
+
+  } else {
+    // Display the form
+  }
 ?>
 <?php $page_title = 'Edit My Account'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
@@ -21,7 +40,7 @@
 
         <div class='listing_body'>
           <div class='listing_info'>
-            <form>
+            <form action='<?php echo url_for('/user/registration/edit.php?uid=' . h(u($id))); ?>' method='post'>
               <?php include('form_fields.php'); ?>
               <input type='submit' value='edit account' />
             </form>

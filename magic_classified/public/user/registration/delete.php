@@ -1,13 +1,32 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
 <?php
+
+  // Make sure ID is set
+  if(!isset($_GET['uid'])) {
+    redirect_to(url_for('/user/registration/index.php'));
+  }
+
+  // Get ID
   $id = $_GET['uid'];
   $user = User::find_by_id($id);
   if($user == false) {
-    redirect_to(url_for('../login.php'));
+    redirect_to(url_for('/user/registration/index.php'));
+  }
+
+  // If Post Request Delete Listing or else display form
+  if(is_post_request()) {
+    // Delete
+    $result = $user->delete();
+    $_SESSION['message'] = 'The account was successfully deleted.';
+    redirect_to(url_for('/user/registration/index.php'));
+
+  } else {
+    // Display Form
+
   }
 ?>
-<?php $page_title = 'Delete My Account'; ?>
+<?php $page_title = 'Delete '. $user->username; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
@@ -21,7 +40,7 @@
 
         <div class='listing_body'>
           <div class='listing_info'>
-            <form>
+            <form action='<?php echo url_for('/user/registration/delete.php?uid=' . h(u($id))); ?>' method='post'>
               <h2>Are you sure you want to delete <?php echo $user->username;?>?</h2>
               <input type='submit' value='Delete account' />
             </form>
