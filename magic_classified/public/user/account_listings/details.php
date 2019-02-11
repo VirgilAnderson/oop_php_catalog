@@ -26,7 +26,7 @@
       <div class="listing_details">
         <div class='listing_title'>
           <h1><?php echo h($listing->name); ?></h1>
-          <p><a href='index.php'><< Return to <i class="fas fa-dove"></i></i> My Listings</a></p>
+          <p><a href='index.php'>&laquo; Return to <i class="fas fa-dove"></i></i> My Listings</a></p>
 
           <!-- Messages -->
             <?php echo display_session_message(); ?>

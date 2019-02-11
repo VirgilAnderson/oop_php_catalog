@@ -35,7 +35,7 @@
       <div class="listing_details">
         <div class='listing_title'>
           <h1>Delete <?php echo $listing->name; ?>?</h1>
-          <p><a href="<?php echo url_for('/user/account_listings/details.php?id=' . $listing->id); ?>"><< Return to <?php echo $listing->name; ?></a></p>
+          <p><a href="<?php echo url_for('/user/account_listings/details.php?id=' . $listing->id); ?>">&laquo; Return to <?php echo $listing->name; ?></a></p>
 
           <!-- Messages -->
           <div class='errors'>

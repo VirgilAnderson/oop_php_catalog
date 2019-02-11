@@ -40,7 +40,8 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h1>Delete <i class="far fa-user-circle"></i> My Account</h1>
+          <h1>Delete:   <?php echo $user->username; ?></h1>
+          <p><a href='<?php echo url_for('/user/registration/index.php?uid=') . $user->id; ?>'>&laquo; Return to <i class="far fa-user-circle"></i> My Account</a></p>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
@@ -54,7 +55,6 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href='<?php echo url_for('/user/registration/index.php?uid=') . $user->id; ?>'><i class="far fa-user-circle"></i> My Account</a></li>
             <li><a href='<?php echo url_for('/user/registration/edit.php?uid=') . $user->id; ?>'><i class="fas fa-edit"></i> Edit Account</a></li>
           </ul>
         </div><!-- listing_footer -->

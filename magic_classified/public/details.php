@@ -20,7 +20,7 @@
       <div class="listing_details">
         <div class='listing_title'>
           <h1><?php echo h($listing->name); ?></h1>
-          <p><a href='<?php echo url_for('/listings.php'); ?>'><< Return to <i class="fas fa-frog"></i> Listings</a></p>
+          <p><a href='<?php echo url_for('/listings.php'); ?>'>&laquo; Return to <i class="fas fa-frog"></i> Listings</a></p>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
