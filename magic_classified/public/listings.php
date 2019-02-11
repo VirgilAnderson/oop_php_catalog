@@ -12,8 +12,9 @@
     $pagination = new Pagination($current_page, $per_page, $total_count);
 
     $sql = "SELECT * FROM listings ";
+    $sql .= "ORDER BY id DESC ";
     $sql .= "LIMIT {$per_page} ";
-    $sql .= "OFFSET {$pagination->offset()}";
+    $sql .= "OFFSET {$pagination->offset()} ";
     $listings = Listing::find_by_sql($sql);
 
     $total_pages = $pagination->total_pages();
