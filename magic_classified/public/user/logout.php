@@ -3,12 +3,10 @@
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main>
-  <section id='main_menu'>
-    <ul id='menu'>
-      <li><a href='<?php echo url_for('/about.php'); ?>'>About Us</a></li>
-      <li><a href='<?php echo url_for('/listings.php'); ?>'>View Listings</a></li>
-    </ul>
-  </section>
+  <?php
+    $session->logout();
+    redirect_to(url_for('/user/login.php'));
+  ?>
 </main>
 
 
