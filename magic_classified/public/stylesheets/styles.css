@@ -432,16 +432,6 @@
       background-color: #130A2E;
     }
 
-    /* ----------------------------------------------------------------------
-      Pagination Styles
-    ----------------------------------------------------------------------- */
-
-    .pagination {
-      width: 100%;
-      text-align: center;
-    }
-
-
 
     /* ----------------------------------------------------------------------
       Listing Detail Styles
@@ -524,6 +514,31 @@
     .thumb:nth-child(odd){
       background-color: darkblue;
     }
+
+    /* ----------------------------------------------------------------------
+      Pagination Styles
+    ----------------------------------------------------------------------- */
+
+    .pagination {
+      width: 100%;
+      text-align: center;
+      margin: 1% 0;
+      font-size: 1em;
+    }
+    .pagination a, .pagination span{
+      color: #000;
+      display: inline-block;
+      margin: 0 5px;
+    }
+    .pagination a:hover {
+      color: #685D8A;
+    }
+    .pagination span.selected {
+      font-weight: bold;
+
+    }
+
+
 
 
     /* ----------------------------------------------------------------------
