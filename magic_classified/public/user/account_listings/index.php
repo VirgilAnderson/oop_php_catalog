@@ -3,7 +3,7 @@
   $uid = $_SESSION['user_id']; // PHP > 7.0
   $user = User::find_by_id($uid);
   if(!isset($uid)) {
-    redirect_to(url_for('/user/registration/new.php'));
+    redirect_to(url_for('/user/login.php'));
   }
   $listings = Listing::find_all();
 
