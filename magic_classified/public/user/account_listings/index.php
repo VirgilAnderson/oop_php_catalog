@@ -5,7 +5,24 @@
   if(!isset($uid)) {
     redirect_to(url_for('/user/login.php'));
   }
-  $listings = Listing::find_all();
+
+  // Find all listings
+  //  $listings = Listing::find_all();
+  // Use pagination instead
+    $current_page = $_GET['page'] ?? 1;
+    $per_page = 15;
+    $total_count = Listing::count_all();
+
+
+    $pagination = new Pagination($current_page, $per_page, $total_count);
+
+    $sql = "SELECT * FROM listings ";
+    $sql .= "ORDER BY id DESC ";
+    $sql .= "LIMIT {$per_page} ";
+    $sql .= "OFFSET {$pagination->offset()} ";
+    $listings = Listing::find_by_sql($sql);
+
+    $total_pages = $pagination->total_pages();
 
 ?>
 <?php $page_title = 'My Listings'; ?>
@@ -18,7 +35,7 @@
       <h1><i class="fas fa-dove"></i> My Listings</h1>
       <p>Check out all your magic listings here</p>
       <p><a href='new.php'><i class="fas fa-plus-circle"></i> New Listing</a></p>
-      <p>Page 3 of 10</p>
+        <p>Page <?php echo $current_page; ?> of <?php echo $total_pages; ?></p>
 
       <table id="magic_listings">
         <tr>
@@ -40,7 +57,21 @@
         <?php } ?>
       </table>
       <div class='pagination'>
-        <p><< 1 2 <strong>3</strong> 4 5 6 7 8 9 10 >></p>
+
+        <?php
+          if($total_pages > 1) {
+            echo "<div class=\"pagination\">";
+
+            $url = url_for('/user/account_listings/index.php');
+
+            echo $pagination->previous_link($url);
+            echo $pagination->number_links($url);
+            echo $pagination->next_link($url);
+
+
+            echo "</div>";
+          }
+        ?>
       </div>
   </article>
 
