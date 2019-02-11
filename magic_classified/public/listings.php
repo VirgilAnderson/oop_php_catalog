@@ -7,11 +7,15 @@
     $current_page = $_GET['page'] ?? 1;
     $per_page = 15;
     $total_count = Listing::count_all();
+    $category = $_GET['cat'] ?? '';
 
 
     $pagination = new Pagination($current_page, $per_page, $total_count);
 
     $sql = "SELECT * FROM listings ";
+    if($category){
+      $sql .= "WHERE category='{$category}' ";
+    }
     $sql .= "ORDER BY id DESC ";
     $sql .= "LIMIT {$per_page} ";
     $sql .= "OFFSET {$pagination->offset()} ";
