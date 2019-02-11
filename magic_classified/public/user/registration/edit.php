@@ -1,11 +1,13 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
 <?php
-  $uid = $_GET['uid'];
+  $uid = $_SESSION['id'];
   $user = User::find_by_id($uid);
   if($user == false) {
     redirect_to(url_for('../login.php'));
   }
+
+  require_login();
 
   if(is_post_request()) {
 

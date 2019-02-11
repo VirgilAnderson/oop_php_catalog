@@ -1,6 +1,6 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php
-  $uid = $_GET['uid']; // PHP > 7.0
+  $uid = $_SESSION['user_id']; // PHP > 7.0
   $user = User::find_by_id($uid);
   if(!isset($uid)) {
     redirect_to(url_for('/user/registration/new.php'));

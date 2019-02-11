@@ -2,10 +2,10 @@
 
 <?php
 
-  // Find all users
-  $uid = $_GET['uid']; // PHP > 7.0
+  // Find User
+  $uid = $_SESSION['user_id'];
   if(!isset($uid)) {
-    redirect_to(url_for('/user/registration/new.php'));
+    redirect_to(url_for('/user/login.php'));
   }
   $user = User::find_by_id($uid);
 
@@ -21,8 +21,8 @@
       <div class="listing_details">
         <div class='listing_title'>
           <h1><i class="far fa-user-circle"></i> My Account: <?php echo h($user->username); ?></h1>
-          <p><a href='<?php echo url_for('/user/account_listings/new.php?uid=') . $user->id; ?>'><i class="fas fa-plus-circle"></i> New Listing</a></p>
-          <p><a href='<?php echo url_for('/user/account_listings/index.php?uid=') . $user->id; ?>'> <i class="fas fa-dove"></i> My Listings</a></p>
+          <p><a href='<?php echo url_for('/user/account_listings/new.php')?>'><i class="fas fa-plus-circle"></i> New Listing</a></p>
+          <p><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i> My Listings</a></p>
         </div><!-- .listing_title -->
         <div class='listing_body'>
           <div class='listing_info'>
