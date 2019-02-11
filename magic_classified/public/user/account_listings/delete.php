@@ -1,14 +1,13 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php
-
+  require_login();
+  $uid = $_SESSION['user_id'];
   // Make sure ID is set
-  if(!isset($_GET['id'])) {
+  if(!isset($uid)) {
     redirect_to(url_for('/user/account_listings/index.php'));
   }
 
-  // Get ID
-  $id = $_GET['id'];
-  $listing = Listing::find_by_id($id);
+  $listing = Listing::find_by_id($uid);
   if($listing == false) {
     redirect_to(url_for('/user/account_listings/index.php'));
   }
@@ -35,6 +34,7 @@
       <div class="listing_details">
         <div class='listing_title'>
           <h1>Delete <?php echo $listing->name; ?>?</h1>
+          <p><a href="<?php echo url_for('/user/account_listings/details.php?id=' . $listing->id); ?>"><< Return to <?php echo $listing->name; ?></a></p>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
@@ -48,9 +48,8 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href="details.php?id=<?php echo $id; ?>"><< Return to <?php echo $listing->name; ?></a></li>
-              <li><a href='edit.php?id=<?php echo $listing->id; ?>'><i class="far fa-trash-alt"></i> Edit <?php echo $listing->name; ?></a></li>
-            <li><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i></i> My Listings</a></li>
+          <li><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i></i> My Listings</a></li>
+              <li><a href="<?php echo url_for('/user/account_listings/edit.php?id=' . $listing->id); ?>"><i class="far fa-trash-alt"></i> Edit <?php echo $listing->name; ?></a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->

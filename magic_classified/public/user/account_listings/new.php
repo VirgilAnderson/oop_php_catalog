@@ -1,6 +1,9 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
 <?php
+  require_login();
+  $uid = $_SESSION['user_id'];
+  
   if(is_post_request()) {
 
     // Create record using post parameters

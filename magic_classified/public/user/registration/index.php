@@ -2,11 +2,16 @@
 
 <?php
 
-  // Find User
+  // Make Sure Logged In
+  require_login();
+
+  // Make sure ID is set
   $uid = $_SESSION['user_id'];
   if(!isset($uid)) {
-    redirect_to(url_for('/user/login.php'));
+    redirect_to(url_for('/user/account_listings/index.php'));
   }
+  
+  // Find User
   $user = User::find_by_id($uid);
 
 ?>

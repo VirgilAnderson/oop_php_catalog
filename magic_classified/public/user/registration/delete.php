@@ -2,9 +2,13 @@
 
 <?php
 
+  // Make Sure Logged In
+  require_login();
+
   // Make sure ID is set
-  if(!isset($_GET['uid'])) {
-    redirect_to(url_for('/user/registration/index.php'));
+  $uid = $_SESSION['user_id'];
+  if(!isset($uid)) {
+    redirect_to(url_for('/user/account_listings/index.php'));
   }
 
   // Get ID

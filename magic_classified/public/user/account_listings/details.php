@@ -2,6 +2,12 @@
 
 <?php
   // Find requested id
+  require_login();
+  $uid = $_SESSION['user_id'];
+  // Make sure ID is set
+  if(!isset($uid)) {
+    redirect_to(url_for('/user/account_listings/index.php'));
+  }
   $id = $_GET['id'] ?? false;
   if(!$id){
     redirect_to('listings.php');

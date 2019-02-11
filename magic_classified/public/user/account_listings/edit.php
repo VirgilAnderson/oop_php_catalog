@@ -2,11 +2,17 @@
 
 
 <?php
-
+  require_login();
+  $uid = $_SESSION['user_id'];
+  $id = $_GET['id'];
+  // Make sure ID is set
+  if(!isset($uid)) {
+    redirect_to(url_for('/user/account_listings/index.php'));
+  }
   if(!isset($_GET['id'])) {
       redirect_to(url_for('/user/account_listings/index.php'));
   }
-  $id = $_GET['id'];
+  
   // display the form
   $listing = Listing::find_by_id($id);
   if($listing == false) {
