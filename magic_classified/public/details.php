@@ -52,13 +52,13 @@
           </div><!-- .listing_info -->
           <div class='listing_gallery'>
             <div class='row'>
-              <div class='column featured'><img src='images/cc.jpg' width='100%'></div>
+              <div class='column featured'><img src='images/cc.jpg' alt='' width='100%'></div>
             </div>
             <div class='row'>
-              <div class='column thumb'><img src='images/cc2.jpg' width='100%'></div>
-              <div class='column thumb'><img src='images/cc3.jpg' width='100%'></div>
-              <div class='column thumb'><img src='images/cc4.jpg' width='100%'></div>
-              <div class='column thumb'><img src='images/cc5.jpg' width='100%'></div>
+              <div class='column thumb'><img src='images/cc2.jpg' alt='' width='100%'></div>
+              <div class='column thumb'><img src='images/cc3.jpg' alt='' width='100%'></div>
+              <div class='column thumb'><img src='images/cc4.jpg' alt='' width='100%'></div>
+              <div class='column thumb'><img src='images/cc5.jpg' alt='' width='100%'></div>
             </div>
           </div><!-- .listing_gallery -->
         </div><!--listing_body -->
