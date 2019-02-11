@@ -32,6 +32,9 @@
       <div class="listing_details">
         <div class='listing_title'>
           <h1>Create New Account</h1>
+          <div class='errors'>
+            <?php  echo display_errors($user->errors); ?>
+          </div>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>

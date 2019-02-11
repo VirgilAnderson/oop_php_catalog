@@ -1,4 +1,13 @@
 <?php require_once('../../../private/initialize.php'); ?>
+<?php
+  $uid = $_GET['uid']; // PHP > 7.0
+  $user = User::find_by_id($uid);
+  if(!isset($uid)) {
+    redirect_to(url_for('/user/registration/new.php'));
+  }
+  $listings = Listing::find_all();
+
+?>
 <?php $page_title = 'My Listings'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
@@ -19,7 +28,6 @@
           <th>Location</th>
           <th>&nbsp;</th>
         </tr>
-        <?php $listings = Listing::find_all(); ?>
         <?php foreach($listings as $listing) { ?>
 
         <tr>
@@ -27,7 +35,7 @@
           <td><?php echo h($listing->category); ?></td>
           <td><?php echo '$' . h($listing->price); ?></td>
           <td><?php echo h($listing->location); ?></td>
-          <td><a href="details.php?id=<?php echo $listing->id; ?>">View</a></td>
+          <td><a href="details.php?id=<?php echo $listing->id; ?>?uid=<?php echo $user->id; ?>">View</a></td>
         </tr>
         <?php } ?>
       </table>

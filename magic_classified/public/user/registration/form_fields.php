@@ -28,10 +28,10 @@ if(!isset($user)) {
 
 <dl>
   <dt><label for='user[password]'>Password:</label></dt>
-  <dd><input type="text" name="user[password]" value="<?php echo h($user->password); ?>" /></dd>
+  <dd><input type="password" name="user[password]" value="<?php echo h($user->password); ?>" /></dd>
 </dl>
 
 <dl>
   <dt><label for='user[confirm_password]'>Confirm Password:</label></dt>
-  <dd><input type="text" name="user[confirm_password]" value="<?php echo h($user->confirm_password); ?>" /></dd>
+  <dd><input type="password" name="user[confirm_password]" value="<?php echo h($user->confirm_password); ?>" /></dd>
 </dl>

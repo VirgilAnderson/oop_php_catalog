@@ -1,8 +1,8 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
 <?php
-  $id = $_GET['uid'];
-  $user = User::find_by_id($id);
+  $uid = $_GET['uid'];
+  $user = User::find_by_id($uid);
   if($user == false) {
     redirect_to(url_for('../login.php'));
   }
@@ -36,11 +36,14 @@
       <div class="listing_details">
         <div class='listing_title'>
           <h1>Edit <i class="far fa-user-circle"></i> My Account</h1>
+          <div class='errors'>
+            <?php  echo display_errors($user->errors); ?>
+          </div>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
           <div class='listing_info'>
-            <form action='<?php echo url_for('/user/registration/edit.php?uid=' . h(u($id))); ?>' method='post'>
+            <form action='<?php echo url_for('/user/registration/edit.php?uid=' . h(u($uid))); ?>' method='post'>
               <?php include('form_fields.php'); ?>
               <input type='submit' value='edit account' />
             </form>
