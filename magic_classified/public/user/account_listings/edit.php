@@ -12,7 +12,7 @@
   if(!isset($_GET['id'])) {
       redirect_to(url_for('/user/account_listings/index.php'));
   }
-  
+
   // display the form
   $listing = Listing::find_by_id($id);
   if($listing == false) {
@@ -28,7 +28,7 @@
 
     if($result === true) {
       $new_id = $listing->id;
-      $_SESSION['message'] = 'The listing was updated successfully.';
+      $session->message('The listing was updated successfully.');
       redirect_to(url_for('/user/account_listings/details.php?id=' . $new_id));
     } else {
       // show errors
@@ -52,9 +52,12 @@
         <div class='listing_title'>
           <h1>Edit: <?php echo $listing->name; ?></h1>
           <p><a href="details.php?id=<?php echo $id; ?>"><< Return to <?php echo $listing->name; ?></a></p>
+
+          <!-- Messages -->
           <div class='errors'>
             <?php  echo display_errors($listing->errors); ?>
           </div>
+
         </div><!-- .listing_title -->
 
         <div class='listing_body'>

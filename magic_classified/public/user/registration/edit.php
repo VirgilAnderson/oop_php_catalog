@@ -26,7 +26,7 @@
 
     if($result === true) {
       $new_id = $user->id;
-      $_SESSION['message'] = 'The user was updated successfully.';
+      $session->message('The user was updated successfully.');
       redirect_to(url_for('/user/registration/index.php?uid=' . $new_id));
     } else {
       // show errors

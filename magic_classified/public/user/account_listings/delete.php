@@ -2,12 +2,13 @@
 <?php
   require_login();
   $uid = $_SESSION['user_id'];
+  $id = $_GET['id'];
   // Make sure ID is set
   if(!isset($uid)) {
     redirect_to(url_for('/user/account_listings/index.php'));
   }
 
-  $listing = Listing::find_by_id($uid);
+  $listing = Listing::find_by_id($id);
   if($listing == false) {
     redirect_to(url_for('/user/account_listings/index.php'));
   }
@@ -16,7 +17,7 @@
   if(is_post_request()) {
     // Delete
     $result = $listing->delete();
-    $_SESSION['message'] = 'The listing was successfully deleted.';
+    $session->message('The listing was successfully deleted.');
     redirect_to(url_for('/user/account_listings/index.php'));
 
   } else {
@@ -35,6 +36,15 @@
         <div class='listing_title'>
           <h1>Delete <?php echo $listing->name; ?>?</h1>
           <p><a href="<?php echo url_for('/user/account_listings/details.php?id=' . $listing->id); ?>"><< Return to <?php echo $listing->name; ?></a></p>
+
+          <!-- Messages -->
+          <div class='errors'>
+            <?php  echo display_errors($listing->errors); ?>
+          </div>
+          <div class='session_messages'>
+            <?php echo display_session_message(); ?>
+          </div>
+
         </div><!-- .listing_title -->
 
         <div class='listing_body'>

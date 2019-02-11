@@ -219,6 +219,13 @@
       color: red;
       font-size: 1.25em;
     }
+    #message {
+      color: blue;
+      border: 1px solid blue;
+      width: 40%;
+      padding: 1%;
+      font-size: 1.25em;
+    }
 
     .main_section {
       display: flex;

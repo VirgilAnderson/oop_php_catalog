@@ -3,7 +3,7 @@
 <?php
   require_login();
   $uid = $_SESSION['user_id'];
-  
+
   if(is_post_request()) {
 
     // Create record using post parameters
@@ -13,7 +13,7 @@
 
     if($result === true) {
       $new_id = $listing->id;
-      $_SESSION['message'] = 'The listing was created successfully.';
+      $session->message('The listing was created successfully.');
       redirect_to(url_for('/user/account_listings/details.php?id=' . $new_id));
     } else {
       // show errors
@@ -36,8 +36,13 @@
         <div class='listing_title'>
           <h1><i class="fas fa-plus-circle"></i> New Listing</h1>
           <p><a href='index.php'><< Return to <i class="fas fa-dove"></i> My Listings</a></p>
+
+          <!-- Messages -->
           <div class='errors'>
             <?php  echo display_errors($listing->errors); ?>
+          </div>
+          <div class='session_messages'>
+            <?php echo display_session_message(); ?>
           </div>
         </div><!-- .listing_title -->
 

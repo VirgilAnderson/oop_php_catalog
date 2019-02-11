@@ -10,9 +10,10 @@
     $result = $user->save();
 
     if($result === true) {
-      $new_id = $user->id;
-      $_SESSION['message'] = 'The account was created successfully.';
-      redirect_to(url_for('/user/registration/index.php?uid=' . $new_id));
+
+      $session->login($user);
+      $session->message('The account was created successfully.');
+      redirect_to(url_for('/user/registration/index.php'));
     } else {
       // show errors
     }

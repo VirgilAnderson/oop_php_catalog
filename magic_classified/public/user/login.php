@@ -22,7 +22,7 @@
       $user = User::find_by_username($username);
       // test if user found and password is correct
       if($user != false && $user->verify_password($password)) {
-        // Mark admin as logged in
+        // Mark user as logged in
         $session->login($user);
         redirect_to(url_for('/user/registration/index.php'));
       } else {
@@ -44,6 +44,8 @@
       <div class="listing_details">
         <div class='listing_title'>
           <h1>Login to My Account</h1>
+          <!-- Messages -->
+          <?php echo display_session_message(); ?>
           <?php echo display_errors($errors); ?>
         </div><!-- .listing_title -->
 
