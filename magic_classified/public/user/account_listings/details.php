@@ -52,7 +52,7 @@
           </div><!-- .listing_info -->
           <div class='listing_gallery'>
             <div class='row'>
-              <div class='column featured'>Img 0</div>
+              <div class='column featured'>Featured Img</div>
             </div>
             <div class='row'>
               <div class='column thumb'>Img 1</div>
