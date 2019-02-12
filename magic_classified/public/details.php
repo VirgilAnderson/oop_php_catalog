@@ -74,7 +74,8 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href='<?php echo url_for('/contact_owner.php'); ?>'><i class="far fa-envelope"></i> Contact Owner</a></li>
+            <li><a href='<?php echo url_for('/contact_owner.php?id=' . $listing->id); ?>'><i class="far fa-envelope"></i> Contact Owner</a></li>
+            <li><a href=''><i class="fas fa-share"></i> Share With A Friend</a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->
