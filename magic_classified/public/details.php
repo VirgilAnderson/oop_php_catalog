@@ -51,14 +51,24 @@
             </dl>
           </div><!-- .listing_info -->
           <div class='listing_gallery'>
-            <div class='row'>
-              <div class='column featured'><img src='images/cc.jpg' alt='' width='100%'></div>
+            <div class="expanded_container">
+              <img id="expandedImg" src="images/cc.jpg" style="width:100%">
             </div>
-            <div class='row'>
-              <div class='column thumb'><img src='images/cc2.jpg' alt='' width='100%'></div>
-              <div class='column thumb'><img src='images/cc3.jpg' alt='' width='100%'></div>
-              <div class='column thumb'><img src='images/cc4.jpg' alt='' width='100%'></div>
-              <div class='column thumb'><img src='images/cc5.jpg' alt='' width='100%'></div>
+
+            <!-- The four columns -->
+            <div class="row">
+              <div class="gallery_column">
+                <img src="images/cc.jpg" style="width:100%" onclick="myGallery(this);">
+              </div>
+              <div class="gallery_column">
+                <img src="images/cc2.jpg" style="width:100%" onclick="myGallery(this);">
+              </div>
+              <div class="gallery_column">
+                <img src="images/cc3.jpg" style="width:100%" onclick="myGallery(this);">
+              </div>
+              <div class="gallery_column">
+                <img src="images/cc4.jpg" style="width:100%" onclick="myGallery(this);">
+              </div>
             </div>
           </div><!-- .listing_gallery -->
         </div><!--listing_body -->

@@ -1,0 +1,29 @@
+
+/* The grid: Four equal columns that floats next to each other */
+.gallery_column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.gallery_column img {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.gallery_column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.expanded_container {
+
+}
