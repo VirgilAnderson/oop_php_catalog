@@ -1,6 +1,7 @@
 <?php require_once('../../../private/initialize.php'); ?>
 <?php
   $uid = $_SESSION['user_id']; // PHP > 7.0
+  $cat = $_GET['cat'] ?? NULL;
   $user = User::find_by_id($uid);
   if(!isset($uid)) {
     redirect_to(url_for('/user/login.php'));
@@ -63,9 +64,9 @@
 
             $url = url_for('/user/account_listings/index.php');
 
-            echo $pagination->previous_link($url);
-            echo $pagination->number_links($url);
-            echo $pagination->next_link($url);
+            echo $pagination->previous_link($url, $cat);
+            echo $pagination->number_links($url, $cat);
+            echo $pagination->next_link($url, $cat);
 
 
             echo "</div>";
