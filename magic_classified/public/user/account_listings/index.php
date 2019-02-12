@@ -41,7 +41,6 @@
       <table id="magic_listings">
         <tr>
           <th>Name</th>
-          <th>Category</th>
           <th>Price</th>
           <th>Location</th>
           <th>&nbsp;</th>
@@ -50,7 +49,6 @@
 
         <tr>
           <td><?php echo h($listing->name); ?></td>
-          <td><?php echo h($listing->category); ?></td>
           <td><?php echo '$' . h($listing->price); ?></td>
           <td><?php echo h($listing->location); ?></td>
           <td><a href="details.php?id=<?php echo $listing->id; ?>?uid=<?php echo $user->id; ?>">View</a></td>
