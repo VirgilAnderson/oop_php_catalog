@@ -20,8 +20,8 @@ if(!isset($listing)) {
   <dt><label for='listing[category]'>Category:</label></dt>
   <dd>
     <select name="listing[category]">
-    <?php foreach(Listing::CATEGORIES as $category) { ?>
-      <option value="<?php echo $category; ?>" <?php if($listing->category == $category) { echo 'selected'; } ?>><?php echo $category; ?></option>
+    <?php foreach(Listing::CATEGORIES as $magic_category) { ?>
+      <option value="<?php echo $magic_category; ?>" <?php if($listing->category == $magic_category) { echo 'selected'; } ?>><?php echo $magic_category; ?></option>
     <?php } ?>
     </select>
   </dd>
@@ -52,4 +52,13 @@ if(!isset($listing)) {
 <dl>
   <dt><label for='listing[location]'>Location:</label></dt>
   <dd><input type="text" name="listing[location]" value="<?php echo h($listing->location); ?>" /></dd>
+</dl>
+
+<dl>
+  <dt><label for='listing[user_id]'>Owner:</label></dt>
+  <dd>
+    <select name='listing[user_id]'>
+      <option value='<?php echo $_SESSION['user_id']; ?>' selected><?php echo $_SESSION['username']; ?></option>
+    </select>
+  </dd>
 </dl>

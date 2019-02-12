@@ -25,7 +25,7 @@
   }
 
 ?>
-<?php $page_title = 'Edit My Account'; ?>
+<?php $page_title = 'Create New Listing'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>

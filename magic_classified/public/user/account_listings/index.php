@@ -11,12 +11,13 @@
   // Use pagination instead
     $current_page = $_GET['page'] ?? 1;
     $per_page = 15;
-    $total_count = Listing::count_all();
+    $total_count = Listing::count_all_user_listings($uid);
 
 
     $pagination = new Pagination($current_page, $per_page, $total_count);
 
     $sql = "SELECT * FROM listings ";
+    $sql .= "WHERE user_id={$uid} ";
     $sql .= "ORDER BY id DESC ";
     $sql .= "LIMIT {$per_page} ";
     $sql .= "OFFSET {$pagination->offset()} ";
