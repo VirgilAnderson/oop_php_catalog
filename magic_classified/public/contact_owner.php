@@ -8,8 +8,8 @@
   }
   // Find listing by id
   $listing = Listing::find_by_id($id);
-  $user = $listing->user_id;
-  $user = User::find_by_id($user);
+  $listing_owner = $listing->user_id;
+  $listing_owner = User::find_by_id($listing_owner);
 ?>
 <?php $page_title = 'Contact Owner: Listing Name'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
@@ -23,7 +23,7 @@
           <h1>Contact Owner: <?php echo $listing->name; ?></h1>
           <p><a href="<?php echo url_for('details.php?id=' . $id); ?>">&laquo; Return to Listing</a></p>
           <p><i class="fas fa-phone"></i> Call: </p>
-          <p><i class="far fa-envelope"></i> Email: <a href="mailto:<?php echo $user->email; ?>?Subject=<?php echo $listing->name; ?>" target="_top"><?php echo $user->email; ?></a></p>
+          <p><i class="far fa-envelope"></i> Email: <a href="mailto:<?php echo $listing_owner->email; ?>?Subject=<?php echo $listing->name; ?>" target="_top"><?php echo $listing_owner->email; ?></a></p>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
@@ -31,18 +31,18 @@
             <form action='' method='post'>
 
               <dl>
-                <dt><label for="">Subject:</label></dt>
-                <dd><input type="text" name="" value="re: <?php echo $listing->name; ?>" size="80"/></dd>
+                <dt><label for="subject">Subject:</label></dt>
+                <dd><input type="text" name="subject" value="re: <?php echo $listing->name; ?>" size="80"/></dd>
               </dl>
 
               <dl>
-                <dt><label for="">Body:</label></dt>
-                <dd><textarea name="" rows="30" cols="81"></textarea></dd>
+                <dt><label for="body">Body:</label></dt>
+                <dd><textarea name="body" rows="30" cols="81"></textarea></dd>
               </dl>
 
               <dl>
-                <dt><label for="">Return Email Address:</label></dt>
-                <dd><input type="text" name="" value=""/></dd>
+                <dt><label for="return_email">Return Email Address:</label></dt>
+                <dd><input type="text" value="<?php if($session->is_logged_in()) {echo $session->email;} ?>" name="return_email"/></dd>
               </dl>
 
               <input type='submit' value='Email Listing Owner' />
@@ -52,7 +52,9 @@
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
+            <?php if(!$session->is_logged_in()) { ?>
             <li><a href='<?php echo url_for('/user/login.php'); ?>'>Login</a></li>
+            <?php } ?>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->
