@@ -40,7 +40,7 @@
         <div class='listing_title'>
           <h1>Contact Owner: <?php echo $listing->name; ?></h1>
           <p><a href="<?php echo url_for('details.php?id=' . $id); ?>">&laquo; Return to Listing</a></p>
-          <p><i class="fas fa-phone"></i> Call: </p>
+          <p><i class="fas fa-phone"></i> Call: <?php echo $listing->phone_number; ?></p>
           <p><i class="far fa-envelope"></i> Email: <a href="mailto:<?php echo $listing_owner->email; ?>?Subject=<?php echo $listing->name; ?>" target="_top"><?php echo $listing_owner->email; ?></a></p>
 
           <?php
