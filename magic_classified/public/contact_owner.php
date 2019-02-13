@@ -14,9 +14,19 @@
   $errors = [];
   $missing = [];
   if (isset($_POST['send'])) {
-      $expected = ['subject', 'body', 'return_email'];
-      $required = ['subject', 'return_email', 'body'];
+      $expected = ['body', 'return_email'];
+      $required = ['return_email', 'body'];
+      $to = $listing_owner->email;
+      $subject = $listing->name;
+      $headers = [];
+      $headers[] = 'From: webmaster@example.com';
+      $headers[] = 'Content-type: text/plain; charset=utf-8';
+      $authorized = null;
       require_once('../private/email_validation.php');
+      if($mailSent) {
+        header('Location: thanks.php?id=' . $id);
+        exit;
+      }
   }
 ?>
 <?php $page_title = 'Contact Owner: Listing Name'; ?>
@@ -47,25 +57,6 @@
           <div class='listing_info'>
             <form action='<?php echo url_for('contact_owner.php?id=' . $id); ?>' method='post'>
 
-              <dl>
-                <dt><label for="subject">Subject:
-                  <?php
-                    if($missing && in_array('subject', $missing)) {
-                      echo "<span class='errors'>Please enter a subject.</span>";
-                    }
-                   ?>
-                </label></dt>
-                <dd><input type="text" name="subject"
-                  <?php
-                    if($errors || $missing) {
-                      echo 'value="' . ent($subject) . '"';
-                    } else {
-                        echo 'value="' . ent($listing->name) . '"';
-                    }
-                  ?>
-
-                  size="80"/></dd>
-              </dl>
 
               <dl>
                 <dt><label for="body">Body:
@@ -75,8 +66,7 @@
                     }
                    ?>
                 </label></dt>
-                <dd><textarea name="body" rows="30" cols="81"><?php if($errors || $missing){echo ent($body);}?>
-                </textarea></dd>
+                <dd><textarea name="body" rows="30" cols="81"><?php if($errors || $missing){echo ent($body);}?></textarea></dd>
               </dl>
 
               <dl>
@@ -84,6 +74,8 @@
                   <?php
                     if($missing && in_array('return_email', $missing)) {
                       echo "<span class='errors'>Please enter a return email.</span>";
+                    } elseif(isset($errors['return_email'])) {
+                      echo "<span class='errors'>Invalid email address.</span>";
                     }
                    ?>
                 </label></dt>
@@ -113,7 +105,6 @@
         </div><!-- listing_footer -->
       </div><!-- listing_details -->
   </article>
-
   <aside class='column'>
       <?php include(SHARED_PATH . '/advertisements.php'); ?>
   </aside>
