@@ -25,6 +25,12 @@
 
         <div class='listing_body'>
           <div class='listing_info'>
+
+            <dl>
+              <dt>Date Posted:</dt>
+              <?php $date = date_create($listing->listing_date); ?>
+              <dd><?php echo date_format($date, "m/d/Y"); ?></dd>
+            </dl>
             <dl>
               <dt>Description:</dt>
               <dd><?php echo h($listing->description); ?></dd>
