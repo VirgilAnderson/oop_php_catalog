@@ -17,7 +17,7 @@
   if(is_post_request()) {
     // Delete
     $result = $listing->delete();
-    $session->message('The listing was successfully deleted.');
+    //$session->message('The listing was successfully deleted.');
     redirect_to(url_for('/user/account_listings/index.php'));
 
   } else {

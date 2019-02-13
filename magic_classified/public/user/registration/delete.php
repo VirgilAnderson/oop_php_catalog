@@ -22,7 +22,7 @@
   if(is_post_request()) {
     // Delete
     $result = $user->delete();
-    $session->message('The account was successfully deleted.');
+    //$session->message('The account was successfully deleted.');
     $session->logout();
     redirect_to(url_for('/user/registration/index.php'));
 
