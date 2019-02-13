@@ -12,6 +12,11 @@ if(!isset($listing)) {
 </dl>
 
 <dl>
+  <dt><label for='listing[phone_number]'>Phone Number:</label></dt>
+  <dd><input type="text" name="listing[phone_number]" value="<?php echo h($listing->phone_number); ?>" /></dd>
+</dl>
+
+<dl>
   <dt><label for='listing[description]'>Description:</label></dt>
   <dd><textarea name="listing[description]" rows="5" cols="50"><?php echo h($listing->description); ?></textarea></dd>
 </dl>
@@ -59,6 +64,15 @@ if(!isset($listing)) {
   <dd>
     <select name='listing[user_id]'>
       <option value='<?php echo $_SESSION['user_id']; ?>' selected><?php echo $_SESSION['username']; ?></option>
+    </select>
+  </dd>
+</dl>
+
+<dl>
+  <dt><label for='listing[listing_date]'>Listing Date:</label></dt>
+  <dd>
+    <select name='listing[listing_date]'>
+      <option value='<?php echo date("Y/m/d"); ?>' selected><?php echo date("Y/m/d"); ?></option>
     </select>
   </dd>
 </dl>
