@@ -35,7 +35,9 @@
 
           <?php
             // Output Email Errors
-            if($errors || $missing) {
+            if ($_POST && $suspect) {
+              echo "<p class='errors'>Sorry, your mail couldn't be sent.</p>";
+            } elseif($errors || $missing) {
                 echo "<p class='errors'>Please fix item(s) indicated</p>";
             }
           ?>
