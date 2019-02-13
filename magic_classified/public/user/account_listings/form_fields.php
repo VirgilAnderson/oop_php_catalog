@@ -72,7 +72,19 @@ if(!isset($listing)) {
   <dt><label for='listing[listing_date]'>Listing Date:</label></dt>
   <dd>
     <select name='listing[listing_date]'>
-      <option value='<?php echo date("Y/m/d"); ?>' selected><?php echo date("Y/m/d"); ?></option>
+      <option value='<?php
+        if($listing->listing_date) {
+          echo $listing->listing_date;
+        } else {
+          echo date("Y/m/d");
+        }
+        ?>' selected><?php
+        if($listing->listing_date) {
+          echo "$listing->listing_date";
+        } else {
+          echo date("Y/m/d");
+        }
+        ?></option>
     </select>
   </dd>
 </dl>
