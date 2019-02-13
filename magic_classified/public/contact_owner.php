@@ -53,7 +53,16 @@
                     }
                    ?>
                 </label></dt>
-                <dd><input type="text" name="subject" value="re: <?php echo $listing->name; ?>" size="80"/></dd>
+                <dd><input type="text" name="subject"
+                  <?php
+                    if($errors || $missing) {
+                      echo 'value="' . ent($subject) . '"';
+                    } else {
+                        echo 'value="' . ent($listing->name) . '"';
+                    }
+                  ?>
+
+                  size="80"/></dd>
               </dl>
 
               <dl>
@@ -64,7 +73,8 @@
                     }
                    ?>
                 </label></dt>
-                <dd><textarea name="body" rows="30" cols="81"></textarea></dd>
+                <dd><textarea name="body" rows="30" cols="81"><?php if($errors || $missing){echo ent($body);}?>
+                </textarea></dd>
               </dl>
 
               <dl>
@@ -75,7 +85,16 @@
                     }
                    ?>
                 </label></dt>
-                <dd><input type="email" value="<?php if($session->is_logged_in()) {echo $session->email;} ?>" name="return_email"/></dd>
+                <dd><input type="email"
+                  <?php
+                    if($errors || $missing) {
+                      echo 'value="' . ent($return_email) . '"';
+                    } elseif($session->is_logged_in()) {
+                        echo 'value="' . ent($session->email) . '"';
+                    }
+                  ?>
+
+                  name="return_email"/></dd>
               </dl>
 
               <input type="submit" name="send" id="send" value='Email Listing Owner' />
