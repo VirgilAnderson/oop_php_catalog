@@ -2,25 +2,30 @@
 
 <?php
   require_login();
+
+  // Make sure ID & UID are set
   $uid = $_SESSION['user_id'];
   $id = $_GET['id'];
-  // Make sure ID is set
+
   if(!isset($uid)) {
     redirect_to(url_for('/user/account_listings/index.php'));
   }
+
   if(!isset($_GET['id'])) {
       redirect_to(url_for('/user/account_listings/index.php'));
   }
 
-  // display the form
   $listing = Listing::find_by_id($id);
   if($listing == false) {
     redirect_to(url_for('/user/account_listings/index.php'));
   }
 
-
+  // If post request, process form
+    if(is_post_request()) {
+      require_once('../../../private/image_upload.php');
+    }
 ?>
-<?php $page_title = 'Add Photo to Listing'; ?>
+<?php $page_title = 'Add image: ' .  $listing->name; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
@@ -43,10 +48,25 @@
 
         <div class='listing_body'>
           <div class='listing_info'>
-            <form action="<?php echo url_for('/user/account_listings/new.php'); ?>" method="post">
-              
-              <input type='submit' value='Create New Listing' />
-            </form>
+            <?php
+              if(isset($new_name)){
+                echo '<img src="' . $new_name . '">';
+              }
+            ?>
+
+            <form action="<?php echo url_for('/user/account_listings/new_image.php?id=' . $id); ?>" method="post" enctype="multipart/form-data">
+
+              <form action="<?php echo url_for('/user/account_listings/new_image.php'); ?>" method="post" enctype="multipart/form-data">
+
+                <dl>
+                  <dd><label for='fileToUpload'>Select image to upload:</label></dd>
+                  <dt><input type="file" name="fileToUpload" id="fileToUpload"></dt>
+                </dl>
+
+                  <input type="submit" value="Upload Image" name="submit">
+              </form>
+
+
           </div><!-- .listing_info -->
 
         </div><!--listing_body -->

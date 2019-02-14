@@ -52,7 +52,7 @@
           <td><?php echo h($listing->name); ?></td>
           <td><?php echo '$' . h($listing->price); ?></td>
           <td><?php echo h($listing->location); ?></td>
-          <td><a href="details.php?id=<?php echo $listing->id; ?>?uid=<?php echo $user->id; ?>">View</a></td>
+          <td><a href="details.php?id=<?php echo $listing->id; ?>">View</a></td>
         </tr>
         <?php } ?>
       </table>
