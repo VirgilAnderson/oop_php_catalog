@@ -74,12 +74,14 @@
               <div class='column thumb'>Img 3</div>
               <div class='column thumb'>Img 4</div>
             </div>
+
           </div><!-- .listing_gallery -->
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
-            <li><a href="<?php echo url_for('/user/account_listings/edit.php?id=' . $listing->id); ?>"><i class="fas fa-edit"></i> Edit <?php echo $listing->name; ?></a></li>
-            <li><a href="<?php echo url_for('/user/account_listings/delete.php?id=' . $listing->id); ?>"><i class="far fa-trash-alt"></i> Delete <?php echo $listing->name; ?></a></li>
+            <li><a href="<?php echo url_for('/user/account_listings/edit.php?id=' . $listing->id); ?>"><i class="fas fa-edit"></i> Edit</a></li>
+            <li><a href="<?php echo url_for('/user/account_listings/delete.php?id=' . $listing->id); ?>"><i class="far fa-trash-alt"></i> Delete</a></li>
+            <li><a href='<?php echo url_for('/user/account_listings/new_image.php?id=' .$listing->id); ?>'><i class="far fa-images"></i> Add image</a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->
