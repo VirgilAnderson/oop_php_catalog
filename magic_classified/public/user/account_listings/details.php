@@ -14,6 +14,11 @@
   }
   // Find listing by id
   $listing = Listing::find_by_id($id);
+
+  // Find Listing Photos
+  $sql = "SELECT * FROM photos WHERE ";
+  $sql .= "listing_id='" . $id . "'";
+  $photos = Photo::find_by_sql($sql);
 ?>
 
 <?php $page_title = 'Details: ' . $listing->name; ?>
@@ -66,13 +71,14 @@
           </div><!-- .listing_info -->
           <div class='listing_gallery'>
             <div class='row'>
-              <div class='column featured'>Featured Img</div>
+              <div class='column featured'><img src='<?php echo "../../user_images/" . $photos[0]->link; ?>' ></div>
             </div>
             <div class='row'>
-              <div class='column thumb'>Img 1</div>
-              <div class='column thumb'>Img 2</div>
-              <div class='column thumb'>Img 3</div>
-              <div class='column thumb'>Img 4</div>
+              <?php foreach($photos as $photo) {?>
+                <div class='column thumb' width='100%'><img src='<?php echo "../../user_images/" . $photo->link; ?>'></div>
+              <?php }?>
+
+
             </div>
 
           </div><!-- .listing_gallery -->

@@ -20,9 +20,24 @@
     redirect_to(url_for('/user/account_listings/index.php'));
   }
 
-  // If post request, process form
+  // If post request, upload image and process form
     if(is_post_request()) {
+      // Upload image & assign name
       require_once('../../../private/image_upload.php');
+
+      // process form
+      $args['link'] = $database_name;
+      $args['listing_id'] = $id;
+      $photo = new Photo($args);
+      $result = $photo->save();
+
+      if($result === true) {
+        $new_id = $photo->id;
+        $session->message('The Photo was added to listing.');
+      } else {
+        // show errors
+      }
+
     }
 ?>
 <?php $page_title = 'Add image: ' .  $listing->name; ?>
@@ -41,7 +56,7 @@
 
           <!-- Messages -->
             <?php echo display_session_message(); ?>
-        
+
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
