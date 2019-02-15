@@ -7,6 +7,10 @@
   $uid = $_SESSION['user_id'];
   $id = $_GET['id'];
 
+  // Set error variables
+  $image_upload_error = [];
+  $image_upload_message = [];
+
   if(!isset($uid)) {
     redirect_to(url_for('/user/account_listings/index.php'));
   }
@@ -39,10 +43,18 @@
 
           <!-- Messages -->
           <div class='errors'>
-            <?php  echo display_errors($listing->errors); ?>
+            <?php
+              foreach($image_upload_error as $x => $message){
+                echo $x . ": " . $message . " <br>";
+              }
+             ?>
           </div>
-          <div class='session_messages'>
-            <?php echo display_session_message(); ?>
+          <div id="message">
+            <?php
+              foreach($image_upload_message as $x => $message){
+                echo $x . ": " . $message . " <br>";
+              }
+            ?>
           </div>
         </div><!-- .listing_title -->
 
