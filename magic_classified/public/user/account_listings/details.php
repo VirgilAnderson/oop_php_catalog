@@ -70,9 +70,9 @@
             </dl>
           </div><!-- .listing_info -->
           <div class='listing_gallery'>
-
+            <!-- Featured Image -->
             <div style="text-align:center">
-              <h2>Listing Gallery</h2>
+              <h2><?php echo $listing->name; ?> Gallery</h2>
               <p>Click on the images below:</p>
             </div>
 

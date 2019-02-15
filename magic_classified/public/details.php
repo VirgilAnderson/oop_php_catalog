@@ -8,6 +8,11 @@
   }
   // Find listing by id
   $listing = Listing::find_by_id($id);
+
+  // Find Listing Photos
+  $sql = "SELECT * FROM photos WHERE ";
+  $sql .= "listing_id='" . $id . "'";
+  $photos = Photo::find_by_sql($sql);
 ?>
 
 <?php $page_title = 'Details: ' . $listing->name; ?>
@@ -57,25 +62,26 @@
             </dl>
           </div><!-- .listing_info -->
           <div class='listing_gallery'>
-            <div class="expanded_container">
-              <img id="expandedImg" src="images/cc.jpg" style="width:100%">
+            <!-- Featured Image -->
+            <div style="text-align:center">
+              <h2><?php echo $listing->name; ?> Gallery</h2>
+              <p>Click on the images below:</p>
+            </div>
+
+            <div class="gallery_container">
+              <img id="expandedImg" style="width:100%">
             </div>
 
             <!-- The four columns -->
-            <div class="row">
+            <div class="gallery_row">
+
+              <?php foreach($photos as $photo) {?>
               <div class="gallery_column">
-                <img src="images/cc.jpg" style="width:100%" onclick="myGallery(this);">
-              </div>
-              <div class="gallery_column">
-                <img src="images/cc2.jpg" style="width:100%" onclick="myGallery(this);">
-              </div>
-              <div class="gallery_column">
-                <img src="images/cc3.jpg" style="width:100%" onclick="myGallery(this);">
-              </div>
-              <div class="gallery_column">
-                <img src="images/cc4.jpg" style="width:100%" onclick="myGallery(this);">
-              </div>
-            </div>
+                <img src="<?php echo "user_images/" . $photo->link; ?>" style="width:100%" onclick="myGallery(this);">
+              </div><!-- .gallery_column -->
+              <?php }?>
+
+            </div><!-- .gallery_row -->
           </div><!-- .listing_gallery -->
         </div><!--listing_body -->
         <div class='listing_footer'>
