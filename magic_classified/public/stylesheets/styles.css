@@ -261,7 +261,6 @@
     .column {
       flex: 1;
       margin: 0;
-      overflow: hidden;
     }
 
     .listings {
@@ -506,14 +505,10 @@
     }
 
     .thumb {
-      background-color: darkgreen;
-      flex: 1;
-      height: 75px;
       text-align: center;
+
     }
-    .thumb:nth-child(odd){
-      background-color: darkblue;
-    }
+
 
     /* ----------------------------------------------------------------------
       Mobile - Listing Detail Styles: 600px

@@ -70,17 +70,26 @@
             </dl>
           </div><!-- .listing_info -->
           <div class='listing_gallery'>
-            <div class='row'>
-              <div class='column featured'><img src='<?php echo "../../user_images/" . $photos[0]->link; ?>' ></div>
+
+            <div style="text-align:center">
+              <h2>Listing Gallery</h2>
+              <p>Click on the images below:</p>
             </div>
-            <div class='row'>
+
+            <div class="gallery_container">
+              <img id="expandedImg" style="width:100%">
+            </div>
+
+            <!-- The four columns -->
+            <div class="gallery_row">
+
               <?php foreach($photos as $photo) {?>
-                <div class='column thumb' width='100%'><img src='<?php echo "../../user_images/" . $photo->link; ?>'></div>
+              <div class="gallery_column">
+                <img src="<?php echo "../../user_images/" . $photo->link; ?>" style="width:100%" onclick="myGallery(this);">
+              </div><!-- .gallery_column -->
               <?php }?>
 
-
-            </div>
-
+            </div><!-- .gallery_row -->
           </div><!-- .listing_gallery -->
         </div><!--listing_body -->
         <div class='listing_footer'>
