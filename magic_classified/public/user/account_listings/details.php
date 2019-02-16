@@ -97,6 +97,11 @@
             <li><a href="<?php echo url_for('/user/account_listings/edit.php?id=' . $listing->id); ?>"><i class="fas fa-edit"></i> Edit</a></li>
             <li><a href="<?php echo url_for('/user/account_listings/delete.php?id=' . $listing->id); ?>"><i class="far fa-trash-alt"></i> Delete</a></li>
             <li><a href='<?php echo url_for('/user/account_listings/new_image.php?id=' .$listing->id); ?>'><i class="far fa-images"></i> Add image</a></li>
+
+            <!-- Display delete link conditionally -->
+            <?php if($photos) { ?>
+            <li><a href='<?php echo url_for('/user/account_listings/delete_image.php?id=' .$listing->id); ?>'><i class="fas fa-minus-circle"></i> Delete Image</a></li>
+            <?php } ?>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->

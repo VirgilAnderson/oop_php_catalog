@@ -13,30 +13,35 @@
       redirect_to(url_for('/user/account_listings/index.php'));
   }
 
+  // Find Listing Photos
+  $sql = "SELECT * FROM photos WHERE ";
+  $sql .= "listing_id='" . $id . "'";
+  $photos = Photo::find_by_sql($sql);
+
+  // If no photos, redirect to details page
+  if(!$photos){
+    redirect_to(url_for('/user/account_listings/details.php?id=' . $id));
+  }
+
   // display the form
   $listing = Listing::find_by_id($id);
   if($listing == false) {
     redirect_to(url_for('/user/account_listings/index.php'));
   }
 
-  // Find Listing Photos
-  $sql = "SELECT * FROM photos WHERE ";
-  $sql .= "listing_id='" . $id . "'";
-  $photos = Photo::find_by_sql($sql);
-
   if(is_post_request()) {
+    // Remove the image
+    $image_to_delete = $_GET['photo_id'];
+    $image_link = '../../user_images/' . $_GET['link'];
 
-    // Create record using post parameters
-    $args = $_POST['listing'];
-    $listing->merge_attributes($args);
-    $result = $listing->save();
-
-    if($result === true) {
-      $new_id = $listing->id;
-      $session->message('The listing was updated successfully.');
-      redirect_to(url_for('/user/account_listings/details.php?id=' . $new_id));
-    } else {
-      // show errors
+    if(unlink($image_link)) {
+      // Remove the record from the database
+      $photo = Photo::find_by_id($image_to_delete);
+      $result = $photo->delete();
+      if($result) {
+        $session->message('The image was successfully deleted.');
+        redirect_to(url_for('/user/account_listings/delete_image.php?id=' . $id));
+      }
     }
 
   } else {
@@ -63,27 +68,33 @@
             <?php  echo display_errors($listing->errors); ?>
           </div>
 
+          <?php echo display_session_message(); ?>
+
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
           <div class='listing_info'>
-            <form action="<?php echo url_for('/user/account_listings/edit.php?id=' . h(u($id))); ?>" method="post">
-              <?php include('form_fields.php'); ?>
-              <input type='submit' value='Edit <?php echo $listing->name; ?>' />
-            </form>
+
+            <!-- Display All Images Form -->
+            <?php foreach($photos as $photo) {?>
+              <form action="<?php echo url_for('/user/account_listings/delete_image.php?id=' . h(u($id)) . '&photo_id=' . $photo->id . '&link=' . $photo->link); ?>" method="post">
+                <div class="delete_container">
+                  <img src="<?php echo "../../user_images/" . $photo->link; ?>" style="width:100%" alt='<?php echo $photo->id; ?>' >
+                  <input type='submit' value='Delete'>
+                </div><!-- .delete_container -->
+
+              </form>
+            <?php }?>
+
+
           </div><!-- .listing_info -->
 
         </div><!--listing_body -->
         <div class='listing_footer'>
           <ul class='footer_menu'>
             <li><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i></i> My Listings</a></li>
-            <li><a href='delete.php?id=<?php echo $listing->id; ?>'><i class="far fa-trash-alt"></i> Delete</a></li>
-            <li><a href='<?php echo url_for('/user/account_listings/new_image.php?id=' .$listing->id); ?>'><i class="far fa-images"></i> Add image</a></li>
-
-            <!-- Display delete link conditionally -->
-            <?php if($photos) { ?>
-            <li><a href='<?php echo url_for('/user/account_listings/delete_image.php?id=' .$listing->id); ?>'><i class="fas fa-minus-circle"></i> Delete Image</a></li>
-            <?php } ?>
+            <li><a href="<?php echo url_for('/user/account_listings/edit.php?id=' . $listing->id); ?>"><i class="fas fa-edit"></i> Edit</a></li>
+            <li><a href='delete.php?id=<?php echo $listing->id; ?>'><i class="far fa-trash-alt"></i> Delete <?php echo $listing->name; ?></a></li>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->

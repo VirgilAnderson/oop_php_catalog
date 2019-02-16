@@ -35,3 +35,21 @@
   position: relative;
   display: none;
 }
+
+/* Delete Images Container */
+.delete_container {
+  float: left;
+  width: 40%;
+  padding: 2%;
+  margin: 2%;
+  border: 1px white solid;
+}
+
+/* IMage preview */
+.preview {
+  float: left;
+  clear: left;
+  width: 40%;
+  padding: 2%;
+  margin: 2%;
+}

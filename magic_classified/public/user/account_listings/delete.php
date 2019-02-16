@@ -12,6 +12,10 @@
   if($listing == false) {
     redirect_to(url_for('/user/account_listings/index.php'));
   }
+  // Find Listing Photos
+  $sql = "SELECT * FROM photos WHERE ";
+  $sql .= "listing_id='" . $id . "'";
+  $photos = Photo::find_by_sql($sql);
 
   // If Post Request Delete Listing or else display form
   if(is_post_request()) {
@@ -59,7 +63,13 @@
         <div class='listing_footer'>
           <ul class='footer_menu'>
           <li><a href='<?php echo url_for('/user/account_listings/index.php'); ?>'> <i class="fas fa-dove"></i></i> My Listings</a></li>
-              <li><a href="<?php echo url_for('/user/account_listings/edit.php?id=' . $listing->id); ?>"><i class="far fa-trash-alt"></i> Edit <?php echo $listing->name; ?></a></li>
+              <li><a href="<?php echo url_for('/user/account_listings/edit.php?id=' . $listing->id); ?>"><i class="far fa-trash-alt"></i> Edit</a></li>
+              <li><a href='<?php echo url_for('/user/account_listings/new_image.php?id=' .$listing->id); ?>'><i class="far fa-images"></i> Add image</a></li>
+
+              <!-- Display delete link conditionally -->
+              <?php if($photos) { ?>
+              <li><a href='<?php echo url_for('/user/account_listings/delete_image.php?id=' .$listing->id); ?>'><i class="fas fa-minus-circle"></i> Delete Image</a></li>
+              <?php } ?>
           </ul>
         </div><!-- listing_footer -->
       </div><!-- listing_details -->
