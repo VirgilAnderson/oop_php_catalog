@@ -1,14 +1,22 @@
 /* The grid: Four equal columns that floats next to each other */
 .gallery_column {
   float: left;
-  width: 20%;
-  padding: 2%;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  padding: 0;
+  margin: 2%;
 }
 
 /* Style the images inside the grid */
 .gallery_column img {
   opacity: 0.8;
   cursor: pointer;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
 }
 
 .gallery_column img:hover {
