@@ -6,6 +6,7 @@
   // Make sure ID & UID are set
   $uid = $_SESSION['user_id'];
   $id = $_GET['id'];
+  $error = isset($_GET['error']) ? $_GET['error'] : null;
 
   if(!isset($uid)) {
     redirect_to(url_for('/user/account_listings/index.php'));
@@ -27,7 +28,7 @@
 
 
   // If post request, upload image and process form
-    if(is_post_request()) {
+    if(is_post_request() && !isset($error)) {
       // Upload image & assign name
       require_once('../../../private/image_upload.php');
 
@@ -58,7 +59,15 @@
           <h1><i class="far fa-images"></i> Add Image</h1>
           <p><a href='<?php echo url_for('/user/account_listings/details.php?id=' . $id) ?>'>&laquo; Return to <?php echo $listing->name; ?></a></p>
 
-          <!-- Messages -->
+
+          <!-- error -->
+          <div class='errors'>
+            <?php
+            if(isset($error)) {
+              echo $error;
+            }
+            ?>
+          </div>
 
           <!-- Messages -->
             <?php echo display_session_message(); ?>

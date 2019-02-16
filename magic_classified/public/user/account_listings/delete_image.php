@@ -63,10 +63,7 @@
           <h1>Edit: <?php echo $listing->name; ?></h1>
           <p><a href="details.php?id=<?php echo $id; ?>">&laquo; Return to <?php echo $listing->name; ?></a></p>
 
-          <!-- Messages -->
-          <div class='errors'>
-            <?php  echo display_errors($listing->errors); ?>
-          </div>
+          
 
           <?php echo display_session_message(); ?>
 

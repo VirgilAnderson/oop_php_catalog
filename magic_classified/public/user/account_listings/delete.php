@@ -19,7 +19,14 @@
 
   // If Post Request Delete Listing or else display form
   if(is_post_request()) {
-    // Delete
+
+    // Delete listing Images
+    foreach($photos as $image_to_delete) {
+      $image_link = '../../user_images/' . $image_to_delete->link;
+      unlink($image_link);
+    }
+
+    // Delete listing
     $result = $listing->delete();
     //$session->message('The listing was successfully deleted.');
     redirect_to(url_for('/user/account_listings/index.php'));
