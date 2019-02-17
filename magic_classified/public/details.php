@@ -6,8 +6,12 @@
   if(!$id){
     redirect_to('listings.php');
   }
+
+
   // Find listing by id
   $listing = Listing::find_by_id($id);
+
+
 
   // Find Listing Photos
   $sql = "SELECT * FROM photos WHERE ";
