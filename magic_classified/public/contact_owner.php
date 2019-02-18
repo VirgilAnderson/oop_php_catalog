@@ -59,18 +59,18 @@
 
 
               <dl>
-                <dt><label for="body">Body:
+                <dt><label for="body" class='col_25'>Body:
                   <?php
                     if($missing && in_array('body', $missing)) {
                       echo "<span class='errors'>Please fill in the body.</span>";
                     }
                    ?>
                 </label></dt>
-                <dd><textarea name="body" rows="30" cols="81"><?php if($errors || $missing){echo ent($body);}?></textarea></dd>
+                <dd><textarea id='body' name="body" class='col_75'><?php if($errors || $missing){echo ent($body);}?></textarea></dd>
               </dl>
 
               <dl>
-                <dt><label for="return_email">Return Email Address:
+                <dt><label for="return_email" class='col_25'>Return Email Address:
                   <?php
                     if($missing && in_array('return_email', $missing)) {
                       echo "<span class='errors'>Please enter a return email.</span>";
@@ -79,7 +79,7 @@
                     }
                    ?>
                 </label></dt>
-                <dd><input type="email"
+                <dd><input type="email" class='col_75'
                   <?php
                     if($errors || $missing) {
                       echo 'value="' . ent($return_email) . '"';
@@ -91,7 +91,7 @@
                   name="return_email"/></dd>
               </dl>
 
-              <input type="submit" name="send" id="send" value='Email Listing Owner' />
+              <input type="submit" name="send" id="send" class='button' value='Email Listing Owner' />
             </form>
           </div><!-- .listing_info -->
 
