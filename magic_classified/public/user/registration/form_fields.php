@@ -7,31 +7,31 @@ if(!isset($user)) {
 ?>
 
 <dl>
-  <dt><label for='user[first_name]'>First Name:</label></dt>
-  <dd><input type="text" name="user[first_name]" value="<?php echo h($user->first_name); ?>" /></dd>
+  <dt><label class='col_25' for='user[first_name]'>First Name:</label></dt>
+  <dd><input class='col_75' type="text" name="user[first_name]" value="<?php echo h($user->first_name); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt><label for='user[last_name]'>Last Name:</label></dt>
-  <dd><input type="text" name="user[last_name]" value="<?php echo h($user->last_name); ?>" /></dd>
+  <dt><label class='col_25' for='user[last_name]'>Last Name:</label></dt>
+  <dd><input class='col_75' type="text" name="user[last_name]" value="<?php echo h($user->last_name); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt><label for='user[username]'>Username:</label></dt>
-  <dd><input type="text" name="user[username]" value="<?php echo h($user->username); ?>" /></dd>
+  <dt><label class='col_25' for='user[username]'>Username:</label></dt>
+  <dd><input class='col_75' type="text" name="user[username]" value="<?php echo h($user->username); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt><label for='user[email]'>Email:</label></dt>
-  <dd><input type="text" name="user[email]" value="<?php echo h($user->email); ?>" /></dd>
+  <dt><label class='col_25' for='user[email]'>Email:</label></dt>
+  <dd><input class='col_75' type="text" name="user[email]" value="<?php echo h($user->email); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt><label for='user[password]'>Password:</label></dt>
-  <dd><input type="password" name="user[password]" value="<?php echo h($user->password); ?>" /></dd>
+  <dt><label class='col_25' for='user[password]'>Password:</label></dt>
+  <dd><input class='col_75' type="password" name="user[password]" value="<?php echo h($user->password); ?>" /></dd>
 </dl>
 
 <dl>
-  <dt><label for='user[confirm_password]'>Confirm Password:</label></dt>
-  <dd><input type="password" name="user[confirm_password]" value="<?php echo h($user->confirm_password); ?>" /></dd>
+  <dt><label class='col_25' for='user[confirm_password]'>Confirm Password:</label></dt>
+  <dd><input class='col_75' type="password" name="user[confirm_password]" value="<?php echo h($user->confirm_password); ?>" /></dd>
 </dl>

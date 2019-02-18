@@ -43,7 +43,7 @@
           <div class='listing_info'>
             <form action='<?php echo url_for('/user/registration/new.php'); ?>' method='post'>
               <?php include('form_fields.php'); ?>
-              <input type='submit' value='New account' />
+              <input type='submit' class='button' value='New account' />
             </form>
           </div><!-- .listing_info -->
 

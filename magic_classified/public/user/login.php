@@ -53,14 +53,14 @@
           <div class='listing_info'>
             <form action='login.php' method='post'>
               <dl>
-                <dt><label for='username'>Username:</label></dt>
-                <dd><input type="text" name="username" value="<?php echo h($username); ?>" /></dd>
+                <dt><label class='col_25' for='username'>Username:</label></dt>
+                <dd><input class='col_75' type="text" name="username" value="<?php echo h($username); ?>" /></dd>
               </dl>
               <dl>
-                <dt><label for='password'>Password:</label></dt>
-                <dd><input type="password" name="password" value="" /></dd>
+                <dt><label class='col_25' for='password'>Password:</label></dt>
+                <dd><input class='col_75' type="password" name="password" value="" /></dd>
               </dl>
-              <input type='submit' name='submit' value='Login' />
+              <input type='submit' class='button' name='submit' value='Login' />
             </form>
           </div><!-- .listing_info -->
 

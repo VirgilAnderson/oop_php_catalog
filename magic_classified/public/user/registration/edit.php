@@ -56,7 +56,7 @@
           <div class='listing_info'>
             <form action='<?php echo url_for('/user/registration/edit.php?uid=' . h(u($uid))); ?>' method='post'>
               <?php include('form_fields.php'); ?>
-              <input type='submit' value='edit account' />
+              <input type='submit' class='button' value='edit account' />
             </form>
           </div><!-- .listing_info -->
 
