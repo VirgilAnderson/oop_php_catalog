@@ -50,7 +50,7 @@
           <div class='listing_info'>
             <form action="<?php echo url_for('/user/account_listings/new.php'); ?>" method="post">
               <?php include('form_fields.php'); ?>
-              <input type='submit' value='Create New Listing' />
+              <input type='submit' class='button' value='Create New Listing' />
             </form>
           </div><!-- .listing_info -->
 

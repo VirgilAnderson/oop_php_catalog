@@ -69,7 +69,7 @@
           <div class='listing_info'>
             <form action="<?php echo url_for('/user/account_listings/edit.php?id=' . h(u($id))); ?>" method="post">
               <?php include('form_fields.php'); ?>
-              <input type='submit' value='Edit <?php echo $listing->name; ?>' />
+              <input type='submit' class='button' value='Edit <?php echo $listing->name; ?>' />
             </form>
           </div><!-- .listing_info -->
 
