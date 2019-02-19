@@ -3,6 +3,7 @@
   $errors = [];
   $username = '';
   $password = '';
+  $verification_code = '';
 
   if(is_post_request()) {
 
@@ -23,7 +24,7 @@
       // test if user found and password is correct
       if($user != false && $user->verify_password($password)) {
         // Mark user as logged in
-        $session->login($user);
+        $session->login($user, $verification_code);
         redirect_to(url_for('/user/registration/index.php'));
       } else {
         // username not found or password does not match

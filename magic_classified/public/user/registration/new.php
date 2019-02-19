@@ -9,11 +9,36 @@
     $user = new User($args);
     $result = $user->save();
 
+    $errors = [];
+    $missing = [];
+
     if($result === true) {
 
-      $session->login($user);
-      $session->message('The account was created successfully.');
-      redirect_to(url_for('/user/registration/index.php'));
+      // Generate Random Verification Code & Save to Session
+      $verification_code = mt_rand();
+      $_SESSION['verification_code'] = $verification_code;
+      $session->login($user, $verification_code);
+
+      // Email Code
+      $expected = [];
+      $required = [];
+      $to = $user->email;
+      $subject = 'Verify Email Address';
+      $headers = [];
+      $headers[] = 'From: webmaster@the-magic-exchange.com';
+      $headers[] = 'Content-type: text/plain; charset=utf-8';
+      $message = 'Your verification code is ' . $verification_code . ' ';
+      $message .= 'http://www.the-magic-exchange.com/public/verify_email.php';
+      $authorized = null;
+      require_once('../../../private/email_validation.php');
+      if($mailSent) {
+        // Redirect to Verify_email.php with code to compare
+        redirect_to(url_for('verify_email.php'));
+      }
+
+
+
+
     } else {
       // show errors
     }
