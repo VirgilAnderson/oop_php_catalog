@@ -10,7 +10,7 @@
   $listing = Listing::find_by_id($id);
   $listing_owner = $listing->user_id;
   $listing_owner = User::find_by_id($listing_owner);
-  $email_to = '';
+  $email_to=$_POST['email_to'];
 
   $errors = [];
   $missing = [];
@@ -20,10 +20,10 @@
       $to = $email_to;
       $subject = $listing->name;
       $headers = [];
-      $headers[] = 'From: webmaster@example.com';
+      $headers[] = 'From: webmaster@the-magic-exchange.com';
       $headers[] = 'Content-type: text/plain; charset=utf-8';
       $authorized = null;
-      require_once('../private/send_listing_validation.php');
+      require_once('../private/email_validation.php');
       if($mailSent) {
         header('Location: thanks.php?id=' . $id);
         exit;

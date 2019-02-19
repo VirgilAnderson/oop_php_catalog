@@ -19,7 +19,7 @@
       $to = $listing_owner->email;
       $subject = $listing->name;
       $headers = [];
-      $headers[] = 'From: webmaster@example.com';
+      $headers[] = 'From: webmaster@the-magic-exchange.com';
       $headers[] = 'Content-type: text/plain; charset=utf-8';
       $authorized = null;
       require_once('../private/email_validation.php');
