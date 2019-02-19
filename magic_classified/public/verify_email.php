@@ -13,6 +13,7 @@
       $user->merge_attributes($args);
       $result = $user->save();
       if($result === true) {
+        $session->login($user, $verification_code);
         $session->message('The account was created successfully.');
         redirect_to(url_for('/user/registration/index.php?uid=' . $uid));
       } else {
