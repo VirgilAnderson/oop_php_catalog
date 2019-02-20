@@ -1,46 +1,13 @@
 <?php require_once('../../../private/initialize.php'); ?>
 
 <?php
-  // if post request
-  if(is_post_request()) {
-    // Find user by email
-    $email = $_POST['email'];
-    $user = User::find_by_email($email);
-    if($user == false) {
-      // display error message
-      $error = 'Error: account not found';
-    } else {
-      // Generate random Number
-      $rand = mt_rand();
+  // Get the random number
 
-      // Assign verified email variable to it
+  // Search database for account with matching number
 
-      // Send reset email
-      $expected = [];
-      $required = [];
-      $to = $user->email;
-      $subject = 'Reset your password';
-      $headers = [];
-      $headers[] = 'From: webmaster@the-magic-exchange.com';
-      $headers[] = 'Content-type: text/plain; charset=utf-8';
-      $message = 'Click the link to reset your password ';
-      $message .= 'http://www.the-magic-exchange.com/public/user/registration/password_reset.php?rand=' . $rand;
-      $authorized = null;
-      require_once('../../../private/email_validation.php');
-      if($mailSent) {
-        // display success message
-        $message = 'Reset email sent. Check your inbox.';
-      }
-
-
-
-    }
-
-
-  }
-
+  // If Post request, update password and set verified email to true 
 ?>
-<?php $page_title = 'Forgot my password'; ?>
+<?php $page_title = 'Reset password'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
@@ -49,7 +16,7 @@
   <article class='column listings'>
       <div class="listing_details">
         <div class='listing_title'>
-          <h2>Forgot My Password</h2>
+          <h2>Reset My Password</h2>
           <?php
             // Display errors
             if(isset($error)) {

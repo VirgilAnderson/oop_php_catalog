@@ -218,6 +218,9 @@
     .errors {
       color: red;
       font-size: 1.25em;
+      border: 1px solid red;
+      width: 40%;
+      padding: 1%;
     }
     #message {
       color: blue;
