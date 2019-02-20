@@ -4,22 +4,23 @@
 
   if(is_post_request()) {
 
+
+
+    // Generate random verirication code and save as verified_email
+    $verification_code = mt_rand();
+
     // Create record using post parameters
     $args =  $_POST['user'];
+    $args['verified_email'] = $verification_code;
+
     $user = new User($args);
     $result = $user->save();
-
     $errors = [];
     $missing = [];
 
     if($result === true) {
-
-      // Generate Random Verification Code & Save to Session
-      $verification_code = mt_rand();
-      $_SESSION['verification_code'] = $verification_code;
-      $session->login($user, $verification_code);
-
-      // Email Code
+      $user_id = $user->id;
+      // Send Verification Code Email
       $expected = [];
       $required = [];
       $to = $user->email;
@@ -28,12 +29,12 @@
       $headers[] = 'From: webmaster@the-magic-exchange.com';
       $headers[] = 'Content-type: text/plain; charset=utf-8';
       $message = 'Your verification code is ' . $verification_code . ' ';
-      $message .= 'http://www.the-magic-exchange.com/public/verify_email.php';
+      $message .= 'http://www.the-magic-exchange.com/public/verify_email.php?user_id=' . $user_id;
       $authorized = null;
       require_once('../../../private/email_validation.php');
       if($mailSent) {
         // Redirect to Verify_email.php with code to compare
-        redirect_to(url_for('verify_email.php'));
+        redirect_to(url_for('verify_email.php?user_id=' . $user_id));
       }
 
 
