@@ -1,5 +1,20 @@
 <?php require_once('../../../private/initialize.php'); ?>
-<?php $page_title = 'Edit My Account'; ?>
+
+<?php
+  // if post request
+  if(is_post_request()) {
+    // Find user by email
+    $email = $_POST['email'];
+    $user = User::find_by_email($email);
+    if($user == false) {
+      $error = 'Account not found.';
+    }
+    // Send reset email
+
+  }
+
+?>
+<?php $page_title = 'Forgot my password'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <main class='row'>
@@ -9,11 +24,17 @@
       <div class="listing_details">
         <div class='listing_title'>
           <h2>Forgot My Password</h2>
+          <?php
+            if(isset($error)) {
+              echo "<p class='errors'>" . $error . "</p>";
+              unset($error);
+            }
+          ?>
         </div><!-- .listing_title -->
 
         <div class='listing_body'>
           <div class='listing_info'>
-            <form>
+            <form action='forgot_password.php' method='post'>
               <dl>
                 <dt><label for='email'>Email Address:</label></dt>
                 <dd><input type="text" name="email" value="" /></dd>
