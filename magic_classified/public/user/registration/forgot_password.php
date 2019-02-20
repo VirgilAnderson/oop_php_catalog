@@ -7,7 +7,7 @@
     $email = $_POST['email'];
     $user = User::find_by_email($email);
     if($user == false) {
-      $error = 'Account not found.';
+      $error = 'Error: account not found';
     }
     // Send reset email
 
