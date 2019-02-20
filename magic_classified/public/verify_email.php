@@ -21,7 +21,7 @@
       }
       } else {
        // Send error
-
+       $verification_error ="Verification code didn't match, please ensure it was entered correctly";
      }
    }
 
@@ -39,6 +39,9 @@
         <div class='listing_title'>
           <h1>Check your email for a verification code</h1>
           <p>This may take a moment: check your spam folder</p>
+          <?php if(!is_null($verification_error)) {
+            echo $verification_error; unset($verification_error);
+          } ?>
 
         </div><!-- .listing_title -->
 

@@ -410,6 +410,7 @@
       background-color: #352958;
       color: white;
       border: 1px solid white;
+      display: none;
     }
 
     .sponsor_box {
