@@ -6,13 +6,12 @@
   // Make sure ID & UID are set
   $uid = $_SESSION['user_id'];
   $id = $_GET['id'];
-  $error = isset($_GET['error']) ? $_GET['error'] : null;
 
   if(!isset($uid)) {
     redirect_to(url_for('/user/account_listings/index.php'));
   }
 
-  if(!isset($_GET['id'])) {
+  if(!isset($id)) {
       redirect_to(url_for('/user/account_listings/index.php'));
   }
 
@@ -26,11 +25,10 @@
   $sql .= "listing_id='" . $id . "'";
   $photo = Photo::find_by_sql($sql);
 
-
   // If post request, upload image and process form
-    if(is_post_request() && !isset($error)) {
+    if(is_post_request()) {
       // Upload image & assign name
-      require_once('../../../private/image_upload.php');
+      require_once('../../../private/upload_image.php');
 
       // If photo uploaded successfully create database record
       if($uploadOk == 1) {
@@ -47,8 +45,6 @@
           // show errors
         }
       }
-
-
     }
 ?>
 <?php $page_title = 'Add image: ' .  $listing->name; ?>
@@ -67,9 +63,6 @@
           <!-- error -->
           <div class='errors'>
             <?php
-            if(isset($error)) {
-              echo $error;
-            }
             if(isset($image_upload_error)) {
               foreach($image_upload_error as $x => $x_value) {
                 echo  $x_value . "<br>";
@@ -87,14 +80,12 @@
         <div class='listing_body'>
           <div class='listing_info'>
             <?php
-              if(isset($new_name)){
-                echo '<div class="preview"><img src="' . $new_name . '" width=100%;></div>';
+              if(isset($database_name)){
+                echo '<div class="preview"><img src="../../user_images/' . $database_name . '" width=100%;></div>';
               }
             ?>
             <div class='preview'>
               <form action="<?php echo url_for('/user/account_listings/new_image.php?id=' . $id); ?>" method="post" enctype="multipart/form-data">
-
-                <form action="<?php echo url_for('/user/account_listings/new_image.php'); ?>" method="post" enctype="multipart/form-data">
 
                   <dl>
                     <dd><label for='fileToUpload'>Select image to upload:</label></dd>
