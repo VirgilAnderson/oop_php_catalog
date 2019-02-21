@@ -15,8 +15,8 @@
   $errors = [];
   $missing = [];
   if (isset($_POST['send'])) {
-      $expected = ['body', 'return_email', 'email_to'];
-      $required = ['body', 'return_email', 'email_to'];
+      $expected = ['body', 'return_email', 'email_to', 'listing_link'];
+      $required = ['body', 'return_email', 'email_to', 'listing_link'];
       $to = $email_to;
       $subject = $listing->name;
       $headers = [];
@@ -106,6 +106,16 @@
                   ?>
 
                   name="return_email"/></dd>
+              </dl>
+
+
+              <dl>
+                <dt><label for='listing_link'>Listing Link:</label></dt>
+                <dd>
+                  <select name='listing_link'>
+                    <option value='http://www.the-magic-exchange.com/public/details.php?id=<?php echo $id; ?>' selected>http://www.the-magic-exchange.com/public/details.php?id=<?php echo $id; ?></option>
+                  </select>
+                </dd>
               </dl>
 
               <input type="submit" name="send" id="send" value='Email Listing Owner' />
