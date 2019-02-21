@@ -32,18 +32,22 @@
       // Upload image & assign name
       require_once('../../../private/image_upload.php');
 
-      // process form
-      $args['link'] = $database_name;
-      $args['listing_id'] = $id;
-      $photo = new Photo($args);
-      $result = $photo->save();
+      // If photo uploaded successfully create database record
+      if($uploadOk == 1) {
+        // process form
+        $args['link'] = $database_name;
+        $args['listing_id'] = $id;
+        $photo = new Photo($args);
+        $result = $photo->save();
 
-      if($result === true) {
-        $new_id = $photo->id;
-        $session->message('The Photo was added to listing.');
-      } else {
-        // show errors
+        if($result === true) {
+          $new_id = $photo->id;
+          $session->message('The Photo was added to listing.');
+        } else {
+          // show errors
+        }
       }
+
 
     }
 ?>
@@ -65,6 +69,12 @@
             <?php
             if(isset($error)) {
               echo $error;
+            }
+            if(isset($image_upload_error)) {
+              foreach($image_upload_error as $x => $x_value) {
+                echo  $x_value . "<br>";
+              }
+              unset($image_upload_error);
             }
             ?>
           </div>
