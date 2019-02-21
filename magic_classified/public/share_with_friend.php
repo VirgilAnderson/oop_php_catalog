@@ -118,7 +118,7 @@
                 </dd>
               </dl>
 
-              <input type="submit" name="send" id="send" value='Email Listing Owner' />
+              <input type="submit" name="send" id="send" value='Share Listing' />
             </form>
           </div><!-- .listing_info -->
 
