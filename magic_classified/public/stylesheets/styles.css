@@ -476,12 +476,12 @@
     ----------------------------------------------------------------------- */
 
     .listings a{
-      color: white;
+      color: ##130A2E;
       text-decoration: none;
     }
 
     .listings a:hover{
-      color: #685D8A;
+      color: #352958;
       text-decoration: underline;
     }
 
