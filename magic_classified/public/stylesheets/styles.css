@@ -478,6 +478,7 @@
     .listings a{
       color: ##130A2E;
       text-decoration: none;
+      font-size: 1.5em;
     }
 
     .listings a:hover{
