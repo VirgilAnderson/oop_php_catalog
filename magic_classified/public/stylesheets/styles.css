@@ -476,14 +476,23 @@
     ----------------------------------------------------------------------- */
 
     .listings a{
-      color: ##130A2E;
+      color: white;
       text-decoration: none;
-      font-size: 1.5em;
     }
 
     .listings a:hover{
-      color: #352958;
+      color: #685D8A;
       text-decoration: underline;
+    }
+
+    #add_listing a{
+      color: #352958;
+      text-decoration: none;
+      font-size: 1.25em;
+    }
+
+    #add_listing a:hover{
+      color: #130A2E;
     }
 
     .listing_details {
