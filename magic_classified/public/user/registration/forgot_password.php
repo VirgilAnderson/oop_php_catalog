@@ -6,6 +6,7 @@
     // Find user by email
     $email = $_POST['email'];
     $user = User::find_by_email($email);
+    
     if($user == false) {
       // display error message
       $error = 'Error: account not found';
@@ -14,25 +15,31 @@
       $rand = mt_rand();
 
       // Assign verified email variable to it
+      $args['forgot_password'] = $rand;
+      $user->merge_attributes($args);
+      $result = $user->save();
 
-      // Send reset email
-      $expected = [];
-      $required = [];
-      $to = $user->email;
-      $subject = 'Reset your password';
-      $headers = [];
-      $headers[] = 'From: webmaster@the-magic-exchange.com';
-      $headers[] = 'Content-type: text/plain; charset=utf-8';
-      $message = 'Click the link to reset your password ';
-      $message .= 'http://www.the-magic-exchange.com/public/user/registration/password_reset.php?rand=' . $rand;
-      $authorized = null;
-      require_once('../../../private/email_validation.php');
-      if($mailSent) {
-        // display success message
-        $message = 'Reset email sent. Check your inbox.';
-      }
-
-
+      if($result === true) {
+          // Send reset email
+          $expected = [];
+          $required = [];
+          $to = $user->email;
+          $subject = 'Reset your password';
+          $headers = [];
+          $headers[] = 'From: webmaster@the-magic-exchange.com';
+          $headers[] = 'Content-type: text/plain; charset=utf-8';
+          $message = 'Click the link to reset your password ';
+          $message .= 'http://www.the-magic-exchange.com/public/user/registration/password_reset.php?rand=' . $rand;
+          $authorized = null;
+          require_once('../../../private/email_validation.php');
+          if($mailSent) {
+            // display success message
+            $message = 'Reset email sent. Check your inbox.';
+          }
+        } else {
+          // Display error message
+          $error = ' Email not sent';
+        }
 
     }
 
