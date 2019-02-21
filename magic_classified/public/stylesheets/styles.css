@@ -217,8 +217,7 @@
 
     .errors {
       color: red;
-      font-size: 1.25em;
-      border: 1px solid red;
+      font-size: 1.25em
       width: 40%;
       padding: 1%;
     }
