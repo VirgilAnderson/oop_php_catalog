@@ -8,7 +8,7 @@
   //  $listings = Listing::find_all();
   // Use pagination instead
     $current_page = $_GET['page'] ?? 1;
-    $per_page = 15;
+    $per_page = 8;
     $total_count = Listing::count_all();
     if(!is_null($cat)){
       // If category selection
@@ -61,17 +61,22 @@
         <tr>
           <th>Name</th>
           <th>Price</th>
-          <th>Location</th>
+          <th>Image</th>
           <th>&nbsp;</th>
         </tr>
 
 
-        <?php foreach($listings as $listing) { ?>
-
+        <?php foreach($listings as $listing) {?>
+          <?php
+          // Find Listing Photos
+          $photo = Photo::find_by_listing_id($listing->id);
+          ?>
         <tr>
           <td><?php echo h($listing->name); ?></td>
           <td><?php echo '$' . h($listing->price); ?></td>
-          <td><?php echo h($listing->location); ?></td>
+          <?php if($photo != false) { ?>
+            <td><img src="<?php echo "user_images/" . $photo->link; ?>" style="width:50px; height:50px;"></td>
+          <?php } else { echo "<td></td>"; } ?>
           <td><a href="details.php?id=<?php echo $listing->id; ?>">View</a></td>
         </tr>
         <?php } ?>
