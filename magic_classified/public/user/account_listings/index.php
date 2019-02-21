@@ -36,7 +36,7 @@
   <article class='column listings'>
       <h1><i class="fas fa-dove"></i> My Listings</h1>
       <p>Check out all your magic listings here</p>
-      <p><a href='new.php'><i class="fas fa-plus-circle"></i> New Listing</a></p>
+      <p id='add_listing'><a href='new.php'><i class="fas fa-plus-circle"></i> New Listing</a></p>
         <p>Page <?php echo $current_page; ?> of <?php echo $total_pages; ?></p>
 
       <table id="magic_listings">

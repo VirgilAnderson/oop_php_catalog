@@ -35,7 +35,7 @@
       <div class="listing_details">
         <div class='listing_title'>
           <h1><i class="fas fa-plus-circle"></i> New Listing</h1>
-          <p><a href='index.php'><< Return to <i class="fas fa-dove"></i> My Listings</a></p>
+          <p><a href='index.php'>&laquo; Return to <i class="fas fa-dove"></i> My Listings</a></p>
 
           <!-- Messages -->
           <div class='errors'>
