@@ -57,14 +57,14 @@
             <form action='<?php echo url_for('share_with_friend.php?id=' . $id); ?>' method='post'>
 
               <dl>
-                <dt><label for="email_to">Send To:
+                <dt><label class='col_25' for="email_to">Send To:
                   <?php
                     if($missing && in_array('email_to', $missing)) {
                       echo "<span class='errors'>Please tell us where to send.</span>";
                     }
                    ?>
                 </label></dt>
-                <dd><input type="email_to"
+                <dd><input class='col_75' type="email_to"
                   <?php
                     if($errors || $missing) {
                       echo 'value="' . ent($email_to) . '"';
@@ -76,18 +76,18 @@
 
 
               <dl>
-                <dt><label for="body">Body:
+                <dt><label class='col_25' for="body">Body:
                   <?php
                     if($missing && in_array('body', $missing)) {
                       echo "<span class='errors'>Please fill in the body.</span>";
                     }
                    ?>
                 </label></dt>
-                <dd><textarea name="body" rows="30" cols="81"><?php if($errors || $missing){echo ent($body);}?></textarea></dd>
+                <dd><textarea id='body' name="body" class='col_75'><?php if($errors || $missing){echo ent($body);}?></textarea></dd>
               </dl>
 
               <dl>
-                <dt><label for="return_email">Return Email Address:
+                <dt><label class='col_25' for="return_email">Return Email Address:
                   <?php
                     if($missing && in_array('return_email', $missing)) {
                       echo "<span class='errors'>Please enter a return email.</span>";
@@ -96,7 +96,7 @@
                     }
                    ?>
                 </label></dt>
-                <dd><input type="email"
+                <dd><input class='col_75' type="email"
                   <?php
                     if($errors || $missing) {
                       echo 'value="' . ent($return_email) . '"';
@@ -110,9 +110,9 @@
 
 
               <dl>
-                <dt><label for='listing_link'>Listing Link:</label></dt>
+                <dt><label class='col_25' for='listing_link'>Listing Link:</label></dt>
                 <dd>
-                  <select name='listing_link'>
+                  <select class='col_75' name='listing_link'>
                     <option value='http://www.the-magic-exchange.com/public/details.php?id=<?php echo $id; ?>' selected>http://www.the-magic-exchange.com/public/details.php?id=<?php echo $id; ?></option>
                   </select>
                 </dd>
