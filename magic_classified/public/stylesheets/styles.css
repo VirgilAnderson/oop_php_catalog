@@ -486,13 +486,13 @@
     }
 
     #add_listing a{
-      color: #352958;
-      text-decoration: none;
+      color: #130A2E;
+      text-decoration: underline;
       font-size: 1.25em;
     }
 
     #add_listing a:hover{
-      color: #130A2E;
+      color: darkred;
     }
 
     .listing_details {
