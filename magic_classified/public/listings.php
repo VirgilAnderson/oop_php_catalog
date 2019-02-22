@@ -53,7 +53,8 @@
         echo "<h2>Search: " . $search . "</h2>";
       }  ?>
       <p>Check out all the newest magic listings here</p>
-      <p>Contact the listing owner and you can buy your magical treasure or create an account to list your own used gear!</p>
+      <p>Contact the listing owner and you can buy your magical treasure</a>
+      <p><a href='<?php echo url_for('user/registration/new.php'); ?>'>Create a FREE account</a> to list your own used gear!</p>
       <p><span class='sidenav_button' style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Categories</span></p>
       <p>Page <?php echo $current_page; ?> of <?php echo $total_pages; ?></p>
 
